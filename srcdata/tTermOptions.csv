@@ -1,0 +1,493 @@
+I/O Type Specific,Terminal Style,Rung Placement,Labeling Scheme,Notes,Default Standard,Terminal Style Definition,Term Brand,IT or MT,Fusing,Card Power Term L1,Card Power Term L2,Term Short Name
+AI-C-3W,Fj&L&Lj&G2|PXC|24V,0&1&2&3,#+&#&#-&#SH,,,Fj&L&Lj&G2|PXC|24V|0&1&2&3|#+&#&#-&#SH,PXC,IT,Fused,No,No,TBD
+AI-C-3W,Fj&L&Lj&G2|TE|24V,0&1&2&3,#+&#&#-&#SH,,,Fj&L&Lj&G2|TE|24V|0&1&2&3|#+&#&#-&#SH,TE,IT,Fused,No,No,TBD
+AI-C-3W,Fj&L&Lj&G2|WAGO|24V,0&1&2&3,#+&#&#-&#SH,,,Fj&L&Lj&G2|WAGO|24V|0&1&2&3|#+&#&#-&#SH,WAGO,IT,Fused,No,No,TBD
+AI-C-3W,Fj;L&Lj&G|PXC|24V,0;1&2&3,#+;#&#-&#SH,,,Fj;L&Lj&G|PXC|24V|0;1&2&3|#+;#&#-&#SH,PXC,MT&IT,Fused,No,No,TBD
+AI-C-3W,Fj;L&Lj&G|TE|24V,0;1&2&3,#+;#&#-&#SH,,,Fj;L&Lj&G|TE|24V|0;1&2&3|#+;#&#-&#SH,TE,MT&IT,Fused,No,No,TBD
+AI-C-3W,Fj;L&Lj&G|WAGO|24V,0;1&2&3,#+;#&#-&#SH,,,Fj;L&Lj&G|WAGO|24V|0;1&2&3|#+;#&#-&#SH,WAGO,MT&IT,Fused,No,No,TBD
+AI-C-3W,Lj;L;G&L2|PXC|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&L2|PXC|24V|0;1;3&2|#+;#;#SH&#-,PXC,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;G&L2|TE|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&L2|TE|24V|0;1;3&2|#+;#;#SH&#-,TE,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;G&L2|WAGO|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&L2|WAGO|24V|0;1;3&2|#+;#;#SH&#-,WAGO,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;G&Lj|PXC|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&Lj|PXC|24V|0;1;3&2|#+;#;#SH&#-,PXC,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;G&Lj|TE|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&Lj|TE|24V|0;1;3&2|#+;#;#SH&#-,TE,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;G&Lj|WAGO|24V,0;1;3&2,#+;#;#SH&#-,,,Lj;L;G&Lj|WAGO|24V|0;1;3&2|#+;#;#SH&#-,WAGO,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;Lj&G2|PXC|24V,0;1;2&3,#+;#;#-&SH,,,Lj;L;Lj&G2|PXC|24V|0;1;2&3|#+;#;#-&SH,PXC,MT&IT,None,No,No,TBD
+AI-C-3W,Lj;L;Lj&G2|WAGO|24V,0;1;2&3,#+;#;#-&SH,,,Lj;L;Lj&G2|WAGO|24V|0;1;2&3|#+;#;#-&SH,WAGO,MT&IT,None,No,No,TBD
+AI-C-3W,,,,,NO TERMINALS,,,,,,,
+AI-C-DF,F&L&G|PXC|24V,0&2&3,#+&#-&#SH,,,F&L&G|PXC|24V|0&2&3|#+&#-&#SH,PXC,IT,Fused,No,No,TBD
+AI-C-DF,F&L&G|TE|24V,0&2&3,#+&#-&#SH,,,F&L&G|TE|24V|0&2&3|#+&#-&#SH,TE,IT,Fused,No,No,TBD
+AI-C-DF,F&L&G|WAGO|24V,0&2&3,#+&#-&#SH,,,F&L&G|WAGO|24V|0&2&3|#+&#-&#SH,WAGO,IT,Fused,No,No,TBD
+AI-C-DF,F&L&G2|PXC|24V,0&2&3,#+&#-&#SH,,INTERSTATES F-IT,F&L&G2|PXC|24V|0&2&3|#+&#-&#SH,PXC,IT,Fused,No,No,TBD
+AI-C-DF,F&L&G2|TE|24V,0&2&3,#+&#-&#SH,,,F&L&G2|TE|24V|0&2&3|#+&#-&#SH,TE,IT,Fused,No,No,TBD
+AI-C-DF,F&L&G2|WAGO|24V,0&2&3,#+&#-&#SH,,,F&L&G2|WAGO|24V|0&2&3|#+&#-&#SH,WAGO,IT,Fused,No,No,TBD
+AI-C-DF,F;L&G|PXC|24V,0;2&3,#+;#-&SH,,,F;L&G|PXC|24V|0;2&3|#+;#-&SH,PXC,MT&IT,Fused,No,No,TBD
+AI-C-DF,F;L&G|TE|24V,0;2&3,#+;#-&SH,,,F;L&G|TE|24V|0;2&3|#+;#-&SH,TE,MT&IT,Fused,No,No,TBD
+AI-C-DF,F;L&G|WAGO|24V,0;2&3,#+;#-&SH,,,F;L&G|WAGO|24V|0;2&3|#+;#-&SH,WAGO,MT&IT,Fused,No,No,TBD
+AI-C-DF,F;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES F-MT,F;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,Fused,No,No,TBD
+AI-C-DF,F;L&G2|TE|24V,0;2&3,#A;#B&SH,,AGP F-MT,F;L&G2|TE|24V|0;2&3|#A;#B&SH,TE,MT&IT,Fused,No,No,TBD
+AI-C-DF,F;L&G2|WAGO|24V,0;2&3,#+;#-&SH,,,F;L&G2|WAGO|24V|0;2&3|#+;#-&SH,WAGO,MT&IT,Fused,No,No,TBD
+AI-C-DF,L&L&G2|PXC|24V,0&2&3,#+&#-&SH,,INTERSTATES NF-IT,L&L&G2|PXC|24V|0&2&3|#+&#-&SH,PXC,IT,None,No,No,TBD
+AI-C-DF,L;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES NF-MT,L;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,None,No,No,TBD
+AI-C-DF,L;L&G2|TE|24V,0;2&3,#+;#-&SH,,,L;L&G2|TE|24V|0;2&3|#+;#-&SH,TE,MT&IT,None,No,No,TBD
+AI-C-DF,L;L&G2|WAGO|24V,0;2&3,#+;#-&SH,,,L;L&G2|WAGO|24V|0;2&3|#+;#-&SH,WAGO,MT&IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|PXC|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|PXC|24V|0&2&3|#+&#-&#SH,PXC,IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|PXC|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|PXC|24V|0&2&3|#+&#-&#SH,PXC,IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|TE|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|TE|24V|0&2&3|#+&#-&#SH,TE,IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|TE|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|TE|24V|0&2&3|#+&#-&#SH,TE,IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|WAGO|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|WAGO|24V|0&2&3|#+&#-&#SH,WAGO,IT,None,No,No,TBD
+AI-C-DF,Lj&L&G|WAGO|24V,0&2&3,#+&#-&#SH,,,Lj&L&G|WAGO|24V|0&2&3|#+&#-&#SH,WAGO,IT,None,No,No,TBD
+AI-C-DF,Lj;L;G|PXC|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|PXC|24V|0;2;3|#+;#-;#SH,PXC,MT,None,No,No,TBD
+AI-C-DF,Lj;L;G|PXC|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|PXC|24V|0;2;3|#+;#-;#SH,PXC,MT,None,No,No,TBD
+AI-C-DF,Lj;L;G|TE|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|TE|24V|0;2;3|#+;#-;#SH,TE,MT,None,No,No,TBD
+AI-C-DF,Lj;L;G|TE|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|TE|24V|0;2;3|#+;#-;#SH,TE,MT,None,No,No,TBD
+AI-C-DF,Lj;L;G|WAGO|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|WAGO|24V|0;2;3|#+;#-;#SH,WAGO,MT,None,No,No,TBD
+AI-C-DF,Lj;L;G|WAGO|24V,0;2;3,#+;#-;#SH,,,Lj;L;G|WAGO|24V|0;2;3|#+;#-;#SH,WAGO,MT,None,No,No,TBD
+AI-C-DF,,,,,NO TERMINALS,,,,,,,
+AI-C-LP,Fj&L&G|PXC|24V,0&1&3,#+&#&SH,,,Fj&L&G|PXC|24V|0&1&3|#+&#&SH,PXC,IT,Fused,No,No,TBD
+AI-C-LP,Fj&L&G|TE|24V,0&1&3,#+&#&SH,,,Fj&L&G|TE|24V|0&1&3|#+&#&SH,TE,IT,Fused,No,No,TBD
+AI-C-LP,Fj&L&G|WAGO|24V,0&1&3,#+&#&SH,,,Fj&L&G|WAGO|24V|0&1&3|#+&#&SH,WAGO,IT,Fused,No,No,TBD
+AI-C-LP,Fj&L&G2|PXC|24V,0&1&3,#+&#&SH,,INTERSTATES F-IT,Fj&L&G2|PXC|24V|0&1&3|#+&#&SH,PXC,IT,Fused,No,No,TBD
+AI-C-LP,Fj&L&G2|TE|24V,0&1&3,#+&#&SH,,,Fj&L&G2|TE|24V|0&1&3|#+&#&SH,TE,IT,Fused,No,No,TBD
+AI-C-LP,Fj&L&G2|WAGO|24V,0&1&3,#+&#&SH,,,Fj&L&G2|WAGO|24V|0&1&3|#+&#&SH,WAGO,IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&G2&Lc|PXC|24V,0;1&3&0,#+;#-&SH&C,,,Fj;L&G2&Lc|PXC|24V|0;1&3&0|#+;#-&SH&C,PXC,MT&IT,Fused,No,Yes,TBD
+AI-C-LP,Fj;L&G2&Lc|TE|24V,0;1&3&0,#+;#-&SH&C,,,Fj;L&G2&Lc|TE|24V|0;1&3&0|#+;#-&SH&C,TE,MT&IT,Fused,No,Yes,TBD
+AI-C-LP,Fj;L&G2&Lc|WAGO|24V,0;1&3&0,#+;#-&SH&C,,,Fj;L&G2&Lc|WAGO|24V|0;1&3&0|#+;#-&SH&C,WAGO,MT&IT,Fused,No,Yes,TBD
+AI-C-LP,Fj;L&G2|PXC|24V,0;1&3,#A;#B&#SH,,INTERSTATES F-MT,Fj;L&G2|PXC|24V|0;1&3|#A;#B&#SH,PXC,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&G2|TE|24V,0;1&3,#+;#&SH,,,Fj;L&G2|TE|24V|0;1&3|#+;#&SH,TE,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&G2|TE|24V,0;1&3,#A;#B&#SH,,,Fj;L&G2|TE|24V|0;1&3|#A;#B&#SH,TE,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&G2|WAGO|24V,0;1&3,#+;#&SH,,,Fj;L&G2|WAGO|24V|0;1&3|#+;#&SH,WAGO,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&G2|WAGO|24V,0;1&3,#A;#B&#SH,,,Fj;L&G2|WAGO|24V|0;1&3|#A;#B&#SH,WAGO,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L&Lj2|PXC|24V,0;1&0,#A;#B&C,,,Fj;L&Lj2|PXC|24V|0;1&0|#A;#B&C,PXC,MT&IT,Fused,No,No,TBD
+AI-C-LP,Fj;L;G|PXC|24V,0;1;3,#+;#;#SH,,,Fj;L;G|PXC|24V|0;1;3|#+;#;#SH,PXC,MT,Fused,No,No,TBD
+AI-C-LP,Fj;L;G|TE|24V,0;1&3,#+;#;#SH,,,Fj;L;G|TE|24V|0;1&3|#+;#;#SH,TE,MT,Fused,No,No,TBD
+AI-C-LP,Fj;L;G|WAGO|24V,0;1&3,#+;#;#SH,,,Fj;L;G|WAGO|24V|0;1&3|#+;#;#SH,WAGO,MT,Fused,No,No,TBD
+AI-C-LP,Lj&L&G|PXC|24V,0&1&3,#+&#-&#SH,,,Lj&L&G|PXC|24V|0&1&3|#+&#-&#SH,PXC,IT,None,No,No,TBD
+AI-C-LP,Lj&L&G|TE|24V,0&1&3,#+&#-&#SH,,,Lj&L&G|TE|24V|0&1&3|#+&#-&#SH,TE,IT,None,No,No,TBD
+AI-C-LP,Lj&L&G|WAGO|24V,0&1&3,#+&#-&#SH,,,Lj&L&G|WAGO|24V|0&1&3|#+&#-&#SH,WAGO,IT,None,No,No,TBD
+AI-C-LP,Lj&L&G2|PXC|24V,0&1&3,#+&#-&SH,,INTERSTATES NF-IT,Lj&L&G2|PXC|24V|0&1&3|#+&#-&SH,PXC,IT,None,No,No,TBD
+AI-C-LP,Lj&L&G2|TE|24V,0&1&3,#+&#-&SH,,,Lj&L&G2|TE|24V|0&1&3|#+&#-&SH,TE,IT,None,No,No,TBD
+AI-C-LP,Lj&L&G2|WAGO|24V,0&1&3,#+&#-&SH,,,Lj&L&G2|WAGO|24V|0&1&3|#+&#-&SH,WAGO,IT,None,No,No,TBD
+AI-C-LP,Lj;L&G2|PXC|24V,0;1&3,#A;#B&#SH,,INTERSTATES NF-MT,Lj;L&G2|PXC|24V|0;1&3|#A;#B&#SH,PXC,MT,None,No,No,TBD
+AI-C-LP,Lj;L&G2|TE|24V,0;1&3,#+;#&#SH,,,Lj;L&G2|TE|24V|0;1&3|#+;#&#SH,TE,MT,None,No,No,TBD
+AI-C-LP,Lj;L&G2|WAGO|24V,0;1&3,#+;#&#SH,,,Lj;L&G2|WAGO|24V|0;1&3|#+;#&#SH,WAGO,MT,None,No,No,TBD
+AI-C-LP,Lj;L;G|PXC|24V,0;1;3,#+;#-;#SH,,,Lj;L;G|PXC|24V|0;1;3|#+;#-;#SH,PXC,MT,None,No,No,TBD
+AI-C-LP,Lj;L;G|TE|24V,0;1;3,#+;#-;#SH,,,Lj;L;G|TE|24V|0;1;3|#+;#-;#SH,TE,MT,None,No,No,TBD
+AI-C-LP,Lj;L;G|WAGO|24V,0;1;3,#+;#-;#SH,,,Lj;L;G|WAGO|24V|0;1;3|#+;#-;#SH,WAGO,MT,None,No,No,TBD
+AI-C-LP,,,,,NO TERMINALS,,,,,,,
+AI-RTD-2W,L&L&G2|PXC|24V,0&2&3,#+&#-&#SH,,,L&L&G2|PXC|24V|0&2&3|#+&#-&#SH,PXC,IT,None,No,No,TBD
+AI-RTD-2W,L&L&G2|TE|24V,0&2&3,#+&#-&#SH,,,L&L&G2|TE|24V|0&2&3|#+&#-&#SH,TE,IT,None,No,No,TBD
+AI-RTD-2W,L&L&G2|WAGO|24V,0&2&3,#+&#-&#SH,,,L&L&G2|WAGO|24V|0&2&3|#+&#-&#SH,WAGO,IT,None,No,No,TBD
+AI-C-LP,L;L;G|PXC|24V,1;2;3,#+;#-;#SH,,,L;L;G|PXC|24V|0;1;3|#+;#-;#SH,PXC,MT,None,No,No,TBD
+AI-RTD-2W,L;L;G|TE|24V,0;2;3,#+;#-;#SH,,,L;L;G|TE|24V|0;2;3|#+;#-;#SH,TE,MT,None,No,No,TBD
+AI-RTD-2W,L;L;G|WAGO|24V,0;2;3,#+;#-;#SH,,,L;L;G|WAGO|24V|0;2;3|#+;#-;#SH,WAGO,MT,None,No,No,TBD
+AI-RTD-2W,,,,,NO TERMINALS,,,,,,,
+AI-RTD-3W,F&L&L&G2|PXC|24V,0&1&2&3,#+&#&#-&#SH,,,F&L&L&G2|PXC|24V|0&1&2&3|#+&#&#-&#SH,PXC,IT,Fused,No,No,TBD
+AI-RTD-3W,F&L&L&G2|TE|24V,0&1&2&3,#+&#&#-&#SH,,,F&L&L&G2|TE|24V|0&1&2&3|#+&#&#-&#SH,TE,IT,Fused,No,No,TBD
+AI-RTD-3W,F&L&L&G2|WAGO|24V,0&1&2&3,#+&#&#-&#SH,,,F&L&L&G2|WAGO|24V|0&1&2&3|#+&#&#-&#SH,WAGO,IT,Fused,No,No,TBD
+AI-RTD-3W,L&L&L&G2|PXC|24V,0&1&2&3,#+&#&#-&#SH,,,L&L&L&G2|PXC|24V|0&1&2&3|#+&#&#-&#SH,PXC,IT,None,No,No,TBD
+AI-RTD-3W,L&L&L&G2|TE|24V,0&1&2&3,#+&#&#-&#SH,,,L&L&L&G2|TE|24V|0&1&2&3|#+&#&#-&#SH,TE,IT,None,No,No,TBD
+AI-RTD-3W,L&L&L&G2|WAGO|24V,0&1&2&3,#+&#&#-&#SH,,,L&L&L&G2|WAGO|24V|0&1&2&3|#+&#&#-&#SH,WAGO,IT,None,No,No,TBD
+AI-RTD-3W,L;L;L&G2|PXC|24V,0;1;2&3,#+&#&#-&#SH,,,L;L;L&G2|PXC|24V|0;1;2&3|#+&#&#-&#SH,PXC,MT&IT,None,No,No,TBD
+AI-RTD-3W,L;L;L&G2|WAGO|24V,0;1;2&3,#+;#;#-&#SH,,,L;L;L&G2|WAGO|24V|0;1;2&3|#+;#;#-&#SH,WAGO,MT&IT,None,No,No,TBD
+AI-RTD-3W,,,,,NO TERMINALS,,,,,,,
+AI-TC,L;L|PXC|24V,0;2,#+;#-,SPECIALIZED THERMOCOUPLE TERMINALS,,L;L|PXC|24V|0;2|#+;#-,PXC,IT,None,No,No,TBD
+AI-TC,L;L|TE|24V,0;2,#+;#-,SPECIALIZED THERMOCOUPLE TERMINALS,,L;L|TE|24V|0;2|#+;#-,TE,IT,None,No,No,TBD
+AI-TC,L;L|WAGO|24V,0;2,#+;#-,SPECIALIZED THERMOCOUPLE TERMINALS,,L;L|WAGO|24V|0;2|#+;#-,WAGO,IT,None,No,No,TBD
+AI-TC,,,,,NO TERMINALS,,,,,,,
+AI-V-3W,Lj&L&G2|PXC|24V,0&1&3,#H&#&SH,,,Lj&L&G2|PXC|24V|0&1&3|#H&#&SH,PXC,IT,None,No,No,TBD
+AI-V-3W,Lj&L&G2|TE|24V,0&1&3,#H&#&SH,,,Lj&L&G2|TE|24V|0&1&3|#H&#&SH,TE,IT,None,No,No,TBD
+AI-V-3W,Lj&L&G2|WAGO|24V,0&1&3,#H&#&SH,,,Lj&L&G2|WAGO|24V|0&1&3|#H&#&SH,WAGO,IT,None,No,No,TBD
+AI-V-3W,Lj;L;G|PXC|24V,0;1;3,#A;#B;#SH,,,Lj;L;G|PXC|24V|0;1;3|#A;#B;#SH,PXC,MT,None,No,No,TBD
+AI-V-3W,Lj;L;G|TE|24V,0;1;3,#A;#B;#SH,,,Lj;L;G|TE|24V|0;1;3|#A;#B;#SH,TE,MT,None,No,No,TBD
+AI-V-3W,Lj;L;G|WAGO|24V,0;1;3,#A;#B;#SH,,,Lj;L;G|WAGO|24V|0;1;3|#A;#B;#SH,WAGO,MT,None,No,No,TBD
+AI-V-3W,Lj;L;Lj&G2|PXC|24V,0;1;3,#A;#B;#C&SH,,,Lj;L;Lj&G2|PXC|24V|0;1;3|#A;#B;#C&SH,PXC,MT&IT,None,No,No,TBD
+AI-V-3W,Lj;L;Lj&G2|WAGO|24V,0;1;3,#A;#B;#C&SH,,,Lj;L;Lj&G2|WAGO|24V|0;1;3|#A;#B;#C&SH,WAGO,MT&IT,None,No,No,TBD
+AI-V-3W,,,,,NO TERMINALS,,,,,,,
+AO-C,F&L&G2|PXC|24V,0&2&3,#+&#-&SH,,INTERSTATES F-IT,F&L&G2|PXC|24V|0&2&3|#+&#-&SH,PXC,IT,Fused,No,No,TBD
+AO-C,F;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES F-MT,F;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,Fused,No,No,TBD
+AO-C,F;L&G2|TE|24V,0;2&3,#&;#-&SH,,,F;L&G2|TE|24V|0;2&3|#&;#-&SH,TE,MT&IT,Fused,No,No,TBD
+AO-C,F;L&G2|WAGO|24V,0;2&3,#&;#-&SH,,,F;L&G2|WAGO|24V|0;2&3|#&;#-&SH,WAGO,MT&IT,Fused,No,No,TBD
+AO-C,K;L&G2|TE|24V,0;2&3,#A;#B&SH,,AGP D-MT,K;L&G2|TE|24V|0;2&3|#A;#B&SH,TE,MT,None,No,No,TBD
+AO-C,L&L&G2|PXC|24V,0&2&3,#+&#-&SH,,INTERSTATES NF-IT,L&L&G2|PXC|24V|0&2&3|#+&#-&SH,PXC,IT,None,No,No,TBD
+AO-C,L;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES NF-MT,L;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,None,No,No,TBD
+AO-C,,,,,NO TERMINALS,,,,,,,
+AO-V,F&L&G|PXC|24V,1&2&3,#&#-&#SH,,,F&L&G|PXC|24V|1&2&3|#&#-&#SH,PXC,IT,Fused,No,No,TBD
+AO-V,F&L&G|TE|24V,1&2&3,#&#-&#SH,,,F&L&G|TE|24V|1&2&3|#&#-&#SH,TE,IT,Fused,No,No,TBD
+AO-V,F&L&G|WAGO|24V,1&2&3,#&#-&#SH,,,F&L&G|WAGO|24V|1&2&3|#&#-&#SH,WAGO,IT,Fused,No,No,TBD
+AO-V,F&L&G2|PXC|24V,0&2&3,#+&#-&SH,,INTERSTATES F-IT,F&L&G2|PXC|24V|0&2&3|#+&#-&SH,PXC,IT,Fused,No,No,TBD
+AO-V,F;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES F-MT,F;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,Fused,No,No,TBD
+AO-V,K;L&G2|TE|24V,0;2&3,#A;#B&SH,,AGP D-MT,K;L&G2|TE|24V|0;2&3|#A;#B&SH,TE,MT,None,No,No,TBD
+AO-V,L&L&G2|PXC|24V,0&2&3,#+&#-&SH,,INTERSTATES NF-IT,L&L&G2|PXC|24V|0&2&3|#+&#-&SH,PXC,IT,None,No,No,TBD
+AO-V,L;L&G2|PXC|24V,0;2&3,#A;#B&SH,,INTERSTATES NF-MT,L;L&G2|PXC|24V|0;2&3|#A;#B&SH,PXC,MT&IT,None,No,No,TBD
+AO-V,L;L;G|PXC|24V,1;2;3,#A;#B;#SH,,,L;L;G|PXC|24V|1;2;3|#A;#B;#SH,PXC,MT,None,No,No,TBD
+AO-V,L;L;G|TE|24V,1;2;3,#A;#B;#SH,,,L;L;G|TE|24V|1;2;3|#A;#B;#SH,TE,MT,None,No,No,TBD
+AO-V,L;L;G|WAGO|24V,1;2;3,#A;#B;#SH,,,L;L;G|WAGO|24V|1;2;3|#A;#B;#SH,WAGO,MT,None,No,No,TBD
+AO-V,,,,,NO TERMINALS,,,,,,,
+DCI,F;L|PXC|24V,1;2,#A;#B,SAFETY MODULES ONLY,,F;L|PXC|24V|1;2|#A;#B,PXC,IT,Fused,No,No,TBD
+DCI,F;L|TE|24V,1;2,#A;#B,SAFETY MODULES ONLY,,F;L|TE|24V|1;2|#A;#B,TE,IT,Fused,No,No,TBD
+DCI,F;L|WAGO|24V,1;2,#A;#B,SAFETY MODULES ONLY,,F;L|WAGO|24V|1;2|#A;#B,WAGO,IT,Fused,No,No,TBD
+DCI,Fj&L&Lc|PXC|24V,0&1&0,#+&#&C,,INTERSTATES F-IT,Fj&L&Lc|PXC|24V|0&1&0|#+&#&C,PXC,IT,Fused,No,Yes,TBD
+DCI,Fj&L|PXC|24,0&1,#H&#,,,Fj&L|PXC|24|0&1|#H&#,PXC,IT,Fused,No,No,TBD
+DCI,Fj&L|TE|24,0&1,#H&#,,,Fj&L|TE|24|0&1|#H&#,TE,IT,Fused,No,No,TBD
+DCI,Fj&L|WAGO|24,0&1,#H&#,,,Fj&L|WAGO|24|0&1|#H&#,WAGO,IT,Fused,No,No,TBD
+DCI,Fj;L&G2|PXC|24V,0;1&3,#A;#B&#SH,,,Fj;L&G2|PXC|24V|0;1&3|#A;#B&#SH,PXC,MT&IT,Fused,No,No,TBD
+DCI,Fj;L&G2|TE|24V,0;1&3,#A;#B&#SH,,,Fj;L&G2|TE|24V|0;1&3|#A;#B&#SH,TE,MT&IT,Fused,No,No,TBD
+DCI,Fj;L&G2|WAGO|24V,0;1&3,#A;#B&#SH,,,Fj;L&G2|WAGO|24V|0;1&3|#A;#B&#SH,WAGO,MT&IT,Fused,No,No,TBD
+DCI,Fj;L&Lc|PXC|24V,0;1&0,#A;#B&C,,INTERSTATES F-MT,Fj;L&Lc|PXC|24V|0;1&0|#A;#B&C,PXC,MT,Fused,No,Yes,TBD
+DCI,Fj;L&Lc|TE|24V,1;2&0,#A;#B&C,,,Fj;L&Lc|TE|24V|1;2&0|#A;#B&C,TE,MT,Fused,No,Yes,TBD
+DCI,Fj;L&Lc|WAGO|24V,1;2&0,#A;#B&C,,,Fj;L&Lc|WAGO|24V|1;2&0|#A;#B&C,WAGO,MT,Fused,No,Yes,TBD
+DCI,Fj;L&Lej&Lc|PXC|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Lej&Lc|PXC|24V|0;1&2&0|#A;#B&#C&C,PXC,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Lej&Lc|TE|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Lej&Lc|TE|24V|0;1&2&0|#A;#B&#C&C,TE,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Lej&Lc|WAGO|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Lej&Lc|WAGO|24V|0;1&2&0|#A;#B&#C&C,WAGO,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Te2j&Lc|PXC|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Te2j&Lc|PXC|24V|0;1&2&0|#A;#B&#C&C,PXC,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Te2j&Lc|TE|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Te2j&Lc|TE|24V|0;1&2&0|#A;#B&#C&C,TE,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Te2j&Lc|WAGO|24V,0;1&2&0,#A;#B&#C&C,,,Fj;L&Te2j&Lc|WAGO|24V|0;1&2&0|#A;#B&#C&C,WAGO,MT&IT,Fused,No,Yes,TBD
+DCI,Fj;L&Te2j|PXC|24V,0;1&2,#A;#B&#C,,,Fj;L&Te2j|PXC|24V|0;1&2|#A;#B&#C,PXC,MT&IT,Fused,No,No,TBD
+DCI,Fj;L&Te2j|TE|24V,0;1&2,#A;#B&#C,,,Fj;L&Te2j|TE|24V|0;1&2|#A;#B&#C,TE,MT&IT,Fused,No,No,TBD
+DCI,Fj;L&Te2j|WAGO|24V,0;1&2,#A;#B&#C,,,Fj;L&Te2j|WAGO|24V|0;1&2|#A;#B&#C,WAGO,MT&IT,Fused,No,No,TBD
+DCI,Fj;L|PXC|24V,0;1,#A;#B,,,Fj;L|PXC|24V|0;1|#A;#B,PXC,MT,Fused,No,No,TBD
+DCI,Fj;L|TE|24V,0;1,#A;#B,,,Fj;L|TE|24V|0;1|#A;#B,TE,MT,Fused,No,No,TBD
+DCI,Fj;L|WAGO|24V,0;1,#A;#B,,,Fj;L|WAGO|24V|0;1|#A;#B,WAGO,MT,Fused,No,No,TBD
+DCI,L&Lc|PXC|24V,1&0,#&C,,,L&Lc|PXC|24V|1&0|#&C,PXC,IT,None,No,Yes,TBD
+DCI,L&Lc|PXC|24V,1&0,#&C,,,L&Lc|PXC|24V|1&0|#&C,PXC,IT,None,No,Yes,TBD
+DCI,L&Lc|TE|24V,1&0,#&C,,,L&Lc|TE|24V|1&0|#&C,TE,IT,None,No,Yes,TBD
+DCI,L&Lc|TE|24V,1&0,#&C,,,L&Lc|TE|24V|1&0|#&C,TE,IT,None,No,Yes,TBD
+DCI,L&Lc|WAGO|24V,1&0,#&C,,,L&Lc|WAGO|24V|1&0|#&C,WAGO,IT,None,No,Yes,TBD
+DCI,L&Lc|WAGO|24V,1&0,#&C,,,L&Lc|WAGO|24V|1&0|#&C,WAGO,IT,None,No,Yes,TBD
+DCI,L;L|PXC|24V,1;2,#A;#B,SAFETY MODULES ONLY,,L;L|PXC|24V|1;2|#A;#B,PXC,IT,None,No,No,TBD
+DCI,L;L|TE|24V,1;2,#A;#B,SAFETY MODULES ONLY,,L;L|TE|24V|1;2|#A;#B,TE,IT,None,No,No,TBD
+DCI,L;L|WAGO|24V,1;2,#A;#B,SAFETY MODULES ONLY,,L;L|WAGO|24V|1;2|#A;#B,WAGO,IT,None,No,No,TBD
+DCI,L|PXC|24V,1,#,,,L|PXC|24V|1|#,PXC,IT,None,No,No,TBD
+DCI,L|TE|24V,1,#,,,L|TE|24V|1|#,TE,IT,None,No,No,TBD
+DCI,L|WAGO|24V,1,#,,,L|WAGO|24V|1|#,WAGO,IT,None,No,No,TBD
+DCI,Lh&F;L&Lc|PXC|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&F;L&Lc|PXC|24V|0&1;2&0|H&#A;#B&C,PXC,MT&IT,Fused,Yes,Yes,TBD
+DCI,Lh&F;L&Lc|TE|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&F;L&Lc|TE|24V|0&1;2&0|H&#A;#B&C,TE,MT&IT,Fused,Yes,Yes,TBD
+DCI,Lh&F;L&Lc|WAGO|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&F;L&Lc|WAGO|24V|0&1;2&0|H&#A;#B&C,WAGO,MT&IT,Fused,Yes,Yes,TBD
+DCI,Lh&L&Lc|PXC|24V,0&1&0,H&#&C,,,Lh&L&Lc|PXC|24V|0&1&0|H&#&C,PXC,IT,None,Yes,Yes,TBD
+DCI,Lh&L&Lc|TE|24V,0&1&0,H&#&C,,,Lh&L&Lc|TE|24V|0&1&0|H&#&C,TE,IT,None,Yes,Yes,TBD
+DCI,Lh&L&Lc|WAGO|24V,0&1&0,H&#&C,,,Lh&L&Lc|WAGO|24V|0&1&0|H&#&C,WAGO,IT,None,Yes,Yes,TBD
+DCI,Lh&L;L&Lc|PXC|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&L;L&Lc|PXC|24V|0&1;2&0|H&#A;#B&C,PXC,MT&IT,None,Yes,Yes,TBD
+DCI,Lh&L;L&Lc|TE|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&L;L&Lc|TE|24V|0&1;2&0|H&#A;#B&C,TE,MT&IT,None,Yes,Yes,TBD
+DCI,Lh&L;L&Lc|WAGO|24V,0&1;2&0,H&#A;#B&C,SAFETY MODULES ONLY,,Lh&L;L&Lc|WAGO|24V|0&1;2&0|H&#A;#B&C,WAGO,MT&IT,None,Yes,Yes,TBD
+DCI,Lj&L&Lc|PXC|24V,0&1&0,#+&#&C,,INTERSTATES NF-IT,Lj&L&Lc|PXC|24V|0&1&0|#+&#&C,PXC,IT,None,No,Yes,TBD
+DCI,Lj;L&Lc|PXC|24V,0;1&0,#A;#B&C,,INTERSTATES NF-MT,Lj;L&Lc|PXC|24V|0;1&0|#A;#B&C,PXC,MT,None,No,Yes,TBD
+DCI,Lj;L&Lc|TE|24V,0;1&0,#A;#B&C,,,Lj;L&Lc|TE|24V|0;1&0|#A;#B&C,TE,MT,None,No,Yes,TBD
+DCI,Lj;L&Lc|WAGO|24V,0;1&0,#A;#B&C,,,Lj;L&Lc|WAGO|24V|0;1&0|#A;#B&C,WAGO,MT,None,No,Yes,TBD
+DCI,Lj;L&Lej&Lc|PXC|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Lej&Lc|PXC|24V|0;1&2&0|#A;#B&#C&C,PXC,IT,None,No,Yes,TBD
+DCI,Lj;L&Lej&Lc|TE|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Lej&Lc|TE|24V|0;1&2&0|#A;#B&#C&C,TE,IT,None,No,Yes,TBD
+DCI,Lj;L&Lej&Lc|WAGO|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Lej&Lc|WAGO|24V|0;1&2&0|#A;#B&#C&C,WAGO,MT&IT,None,No,Yes,TBD
+DCI,Lj;L&Te2j&Lc|PXC|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Te2j&Lc|PXC|24V|0;1&2&0|#A;#B&#C&C,PXC,MT&IT,None,No,Yes,TBD
+DCI,Lj;L&Te2j&Lc|TE|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Te2j&Lc|TE|24V|0;1&2&0|#A;#B&#C&C,TE,MT&IT,None,No,Yes,TBD
+DCI,Lj;L&Te2j&Lc|WAGO|24V,0;1&2&0,#A;#B&#C&C,,,Lj;L&Te2j&Lc|WAGO|24V|0;1&2&0|#A;#B&#C&C,WAGO,MT&IT,None,No,Yes,TBD
+DCI,Lj;L;Lj|PXC|24V,0;1;2,#A;#B#C,,,Lj;L;Lj|PXC|24V|0;1;2|#A;#B#C,PXC,MT,None,No,No,TBD
+DCI,Lj;L;Lj|TE|24V,0;1;2,#A;#B#C,,,Lj;L;Lj|TE|24V|0;1;2|#A;#B#C,TE,MT,None,No,No,TBD
+DCI,Lj;L;Lj|WAGO|24V,0;1;2,#A;#B#C,,,Lj;L;Lj|WAGO|24V|0;1;2|#A;#B#C,WAGO,MT,None,No,No,TBD
+DCI,Lj;L|PXC|24V,0;1,#A;#B,,,Lj;L|PXC|24V|0;1|#A;#B,PXC,IT,None,No,No,TBD
+DCI,Lj;L|TE|24V,0;1,#A;#B,,,Lj;L|TE|24V|0;1|#A;#B,TE,IT,None,No,No,TBD
+DCI,Lj;L|WAGO|24V,0;1,#A;#B,,,Lj;L|WAGO|24V|0;1|#A;#B,WAGO,IT,None,No,No,TBD
+DCI,,,,,NO TERMINALS,,,,,,,
+DCO,F&Le2j|PXC|24V,1&2,#&#C,,,F&Le2j|PXC|24V|1&2|#&#C,PXC,IT,Fused,No,No,TBD
+DCO,F&Le2j|TE|24V,1&2,#&#C,,,F&Le2j|TE|24V|1&2|#&#C,TE,IT,Fused,No,No,TBD
+DCO,F&Le2j|WAGO|24V,1&2,#&#C,,,F&Le2j|WAGO|24V|1&2|#&#C,WAGO,IT,Fused,No,No,TBD
+DCO,F&Lj|PXC|24V,1&2,#&#C,,,F&Lj|PXC|24V|1&2|#&#C,PXC,IT,Fused,No,No,TBD
+DCO,F&Lj|TE|24V,1&2,#&#C,,,F&Lj|TE|24V|1&2|#&#C,TE,IT,Fused,No,No,TBD
+DCO,F&Lj|WAGO|24V,1&2,#&#C,,,F&Lj|WAGO|24V|1&2|#&#C,WAGO,IT,Fused,No,No,TBD
+DCO,F;L|PXC|24V,1;2,#A;#B,,,F;L|PXC|24V|1;2|#A;#B,PXC,IT,Fused,No,No,TBD
+DCO,F;L|TE|24V,1;2,#A;#B,,,F;L|TE|24V|1;2|#A;#B,TE,IT,Fused,No,No,TBD
+DCO,F;L|WAGO|24V,1;2,#A;#B,,,F;L|WAGO|24V|1;2|#A;#B,WAGO,IT,Fused,No,No,TBD
+DCO,F;Lj|PXC|24V,1;2,#A;#B,,,F;Lj|PXC|24V|1;2|#A;#B,PXC,MT,Fused,No,No,TBD
+DCO,F;Lj|TE|24V,1;2,#A;#B,,,F;Lj|TE|24V|1;2|#A;#B,TE,MT,Fused,No,No,TBD
+DCO,F;Lj|WAGO|24V,1;2,#A;#B,,,F;Lj|WAGO|24V|1;2|#A;#B,WAGO,MT,Fused,No,No,TBD
+DCO,F|PXC|24V,1,#,,,F|PXC|24V|1|#,PXC,IT,Fused,No,No,TBD
+DCO,F|TE|24V,1,#,,,F|TE|24V|1|#,TE,IT,Fused,No,No,TBD
+DCO,F|WAGO|24V,1,#,,,F|WAGO|24V|1|#,WAGO,IT,Fused,No,No,TBD
+DCO,L&Le2j|PXC|24V,1&2,#&#C,,,L&Le2j|PXC|24V|1&2|#&#C,PXC,IT,None,No,No,TBD
+DCO,L&Le2j|TE|24V,1&2,#&#C,,,L&Le2j|TE|24V|1&2|#&#C,TE,IT,None,No,No,TBD
+DCO,L&Le2j|WAGO|24V,1&2,#&#C,,,L&Le2j|WAGO|24V|1&2|#&#C,WAGO,IT,None,No,No,TBD
+DCO,L;L;Lj|PXC|24V,0;1;2,#A;#B;#C,What is the first L for?,,L;L;Lj|PXC|24V|0;1;2|#A;#B;#C,PXC,IT,None,No,No,TBD
+DCO,L;L;Lj|WAGO|24V,0;1;2,#A;#B;#C,What is the first L for?,,L;L;Lj|WAGO|24V|0;1;2|#A;#B;#C,WAGO,IT,None,No,No,TBD
+DCO,L;Lj|PXC|24V,1;2,#A;#B,,,L;Lj|PXC|24V|1;2|#A;#B,PXC,IT,None,No,No,TBD
+DCO,L;Lj|TE|24V,1;2,#A;#B,,,L;Lj|TE|24V|1;2|#A;#B,TE,IT,None,No,No,TBD
+DCO,L;Lj|WAGO|24V,1;2,#A;#B,,,L;Lj|WAGO|24V|1;2|#A;#B,WAGO,IT,None,No,No,TBD
+DCO,L|PXC|24V,1,#,,,L|PXC|24V|1|#,PXC,IT,None,No,No,TBD
+DCO,L|TE|24V,1,#,,,L|TE|24V|1|#,TE,IT,None,No,No,TBD
+DCO,L|WAGO|24V,1,#,,,L|WAGO|24V|1|#,WAGO,IT,None,No,No,TBD
+DCO,Lh&F&Le2j|PXC|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|PXC|24V|0&1&2|H&#&#C,PXC,IT,Fused,Yes,No,TBD
+DCO,Lh&F&Le2j|TE|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|TE|24V|0&1&2|H&#&#C,TE,IT,Fused,Yes,No,TBD
+DCO,Lh&F&Le2j|WAGO|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|WAGO|24V|0&1&2|H&#&#C,WAGO,IT,Fused,Yes,No,TBD
+DCO,Lh&F;L&Lc|PXC|24V,0&1;2&0,H&#A;#B&C,,,Lh&F;L&Lc|PXC|24V|0&1;2&0|H&#A;#B&C,PXC,MT&IT,Fused,Yes,Yes,TBD
+DCO,Lh&F;L&Lc|TE|24V,0&1;2&0,H&#A;#B&C,,,Lh&F;L&Lc|TE|24V|0&1;2&0|H&#A;#B&C,TE,MT&IT,Fused,Yes,Yes,TBD
+DCO,Lh&F;L&Lc|WAGO|24V,0&1;2&0,H&#A;#B&C,,,Lh&F;L&Lc|WAGO|24V|0&1;2&0|H&#A;#B&C,WAGO,MT&IT,Fused,Yes,Yes,TBD
+DCO,Lh&F;Lj|PXC|24V,0&1;2,H&#A;#B,,,Lh&F;Lj|PXC|24V|0&1;2|H&#A;#B,PXC,MT,Fused,Yes,No,TBD
+DCO,Lh&F;Lj|TE|24V,0&1;2,H&#A;#B,,,Lh&F;Lj|TE|24V|0&1;2|H&#A;#B,TE,MT,Fused,Yes,No,TBD
+DCO,Lh&F;Lj|WAGO|24V,0&1;2,H&#A;#B,,,Lh&F;Lj|WAGO|24V|0&1;2|H&#A;#B,WAGO,MT,Fused,Yes,No,TBD
+DCO,Lh&L&Lc|PXC|24V,0&1&0,H&#&C,,,Lh&L&Lc|PXC|24V|0&1&0|H&#&C,PXC,IT,None,Yes,Yes,TBD
+DCO,Lh&L&Lc|TE|24V,0&1&0,H&#&C,,,Lh&L&Lc|TE|24V|0&1&0|H&#&C,TE,IT,None,Yes,Yes,TBD
+DCO,Lh&L&Lc|WAGO|24V,0&1&0,H&#&C,,,Lh&L&Lc|WAGO|24V|0&1&0|H&#&C,WAGO,IT,None,Yes,Yes,TBD
+DCO,Lh&L&Le2j|PXC|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|PXC|24V|0&1&2|H&#&#C,PXC,IT,None,Yes,No,TBD
+DCO,Lh&L&Le2j|TE|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|TE|24V|0&1&2|H&#&#C,TE,IT,None,Yes,No,TBD
+DCO,Lh&L&Le2j|WAGO|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|WAGO|24V|0&1&2|H&#&#C,WAGO,IT,None,Yes,No,TBD
+DCO,Lh&L;Lj|PXC|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|PXC|24V|0&1;2|H&#A;#B,PXC,MT,None,Yes,No,TBD
+DCO,Lh&L;Lj|TE|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|TE|24V|0&1;2|H&#A;#B,TE,MT,None,Yes,No,TBD
+DCO,Lh&L;Lj|WAGO|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|WAGO|24V|0&1;2|H&#A;#B,WAGO,MT,None,Yes,No,TBD
+DCO,Lh&L|PXC|24V,0&1,H&#,,,Lh&L|PXC|24V|0&1|H&#,PXC,IT,None,Yes,No,TBD
+DCO,Lh&L|TE|24V,0&1,H&#,,,Lh&L|TE|24V|0&1|H&#,TE,IT,None,Yes,No,TBD
+DCO,Lh&L|WAGO|24V,0&1,H&#,,,Lh&L|WAGO|24V|0&1|H&#,WAGO,IT,None,Yes,No,TBD
+DCO,,,,,NO TERMINALS,,,,,,,
+DI,F&Lc|PXC|120V,1&0,#&N,,,F&Lc|PXC|120V|1&0|#&N,PXC,IT,Fused,No,Yes,TBD
+DI,F&Lc|TE|120V,1&0,#&N,,,F&Lc|TE|120V|1&0|#&N,TE,IT,Fused,No,Yes,TBD
+DI,F&Lc|WAGO|120V,1&0,#&N,,,F&Lc|WAGO|120V|1&0|#&N,WAGO,IT,Fused,No,Yes,TBD
+DI,Fj&L&Lc|PXC|120V,0&1&0,#H&#&N,,INTERSTATES F-IT,Fj&L&Lc|PXC|120V|0&1&0|#H&#&N,PXC,IT,Fused,No,Yes,TBD
+DI,Fj&L|PXC|120V,0&1,#H&#,,,Fj&L|PXC|120V|0&1|#H&#,PXC,IT,Fused,No,No,TBD
+DI,Fj&L|TE|120V,0&1,#H&#,,,Fj&L|TE|120V|0&1|#H&#,TE,IT,Fused,No,No,TBD
+DI,Fj&L|WAGO|120V,0&1,#H&#,,,Fj&L|WAGO|120V|0&1|#H&#,WAGO,IT,Fused,No,No,TBD
+DI,Fj;L&Lc|PXC|120V,0;1&0,#A;#B&N,,INTERSTATES F-MT,Fj;L&Lc|PXC|120V|0;1&0|#A;#B&N,PXC,MT,Fused,No,Yes,TBD
+DI,Fj;L&Lc|TE|120V,0;1&0,#A;#B&N,,,Fj;L&Lc|TE|120V|0;1&0|#A;#B&N,TE,MT&IT,Fused,No,Yes,TBD
+DI,Fj;L&Lc|WAGO|120V,0;1&0,#A;#B&N,,,Fj;L&Lc|WAGO|120V|0;1&0|#A;#B&N,WAGO,MT&IT,Fused,No,Yes,TBD
+DI,Fj;L&Te2j&G2&Fh;Lc|TE|120V,0;1&2&3&0;0,#A;#B&N&GND&H;C,FOR TESTING,,Fj;L&Te2j&G2&Fh;Lc|TE|120V|0;1&2&3&0;0|#A;#B&N&GND&H;C,TE,MT,Fused,Yes,Yes,TBD
+DI,Fj;L&Te2j&G2|TE|120V,0;1&2&3,#A;#B&N&GND,FOR TESTING,,Fj;L&Te2j&G2|TE|120V|0;1&2&3|#A;#B&N&GND,TE,MT,Fused,No,No,TBD
+DI,Fj;L&Te2j|TE|120V,0;1&2,#A;#B&N,,AGP F-MT,Fj;L&Te2j|TE|120V|0;1&2|#A;#B&N,TE,MT,Fused,No,No,TBD
+DI,Fj;L|PXC|120V,0;1,#A;#B,,,Fj;L|PXC|120V|0;1|#A;#B,PXC,MT,Fused,No,No,TBD
+DI,Fj;L|TE|120V,0;1,#A;#B,,,Fj;L|TE|120V|0;1|#A;#B,TE,MT,Fused,No,No,TBD
+DI,Fj;L|WAGO|120V,0;1,#A;#B,,,Fj;L|WAGO|120V|0;1|#A;#B,WAGO,MT,Fused,No,No,TBD
+DI,L&Lc|PXC|120V,1&0,#&N,,INTERSTATES NF-IT,L&Lc|PXC|120V|1&0|#&N,PXC,IT,None,No,Yes,TBD
+DI,L&Lc|TE|120V,1&0,#&N,,,L&Lc|TE|120V|1&0|#&N,TE,IT,None,No,Yes,TBD
+DI,L&Lc|WAGO|120V,1&0,#&N,,,L&Lc|WAGO|120V|1&0|#&N,WAGO,IT,None,No,Yes,TBD
+DI,L|PXC|120V,1,#,,,L|PXC|120V|1|#,PXC,IT,None,No,No,TBD
+DI,L|TE|120V,1,#,,,L|TE|120V|1|#,TE,IT,None,No,No,TBD
+DI,L|WAGO|120V,1,#,,,L|WAGO|120V|1|#,WAGO,IT,None,No,No,TBD
+DI,Lh&F&Lc|PXC|120V,0&1&0,H&#&N,,,Lh&F&Lc|PXC|120V|0&1&0|H&#&N,PXC,IT,Fused,Yes,Yes,TBD
+DI,Lh&F&Lc|TE|120V,0&1&0,H&#&N,,,Lh&F&Lc|TE|120V|0&1&0|H&#&N,TE,IT,Fused,Yes,Yes,TBD
+DI,Lh&F&Lc|WAGO|120V,0&1&0,H&#&N,,,Lh&F&Lc|WAGO|120V|0&1&0|H&#&N,WAGO,IT,Fused,Yes,Yes,TBD
+DI,Lh&L&Lc|PXC|120V,0&1&0,H&#&N,,,Lh&L&Lc|PXC|120V|0&1&0|H&#&N,PXC,IT,None,Yes,Yes,TBD
+DI,Lh&L&Lc|TE|120V,0&1&0,H&#&N,,,Lh&L&Lc|TE|120V|0&1&0|H&#&N,TE,IT,None,Yes,Yes,TBD
+DI,Lh&L&Lc|WAGO|120V,0&1&0,H&#&N,,,Lh&L&Lc|WAGO|120V|0&1&0|H&#&N,WAGO,IT,None,Yes,Yes,TBD
+DI,Lh&L|PXC|120V,0&1,H&#,,,Lh&L|PXC|120V|0&1|H&#,PXC,IT,None,Yes,No,TBD
+DI,Lh&L|TE|120V,0&1,H&#,,,Lh&L|TE|120V|0&1|H&#,TE,IT,None,Yes,No,TBD
+DI,Lh&L|WAGO|120V,0&1,H&#,,,Lh&L|WAGO|120V|0&1|H&#,WAGO,IT,None,Yes,No,TBD
+DI,Lj&L|PXC|120V,0&1,#H&#,,,Lj&L|PXC|120V|0&1|#H&#,PXC,IT,None,No,No,TBD
+DI,Lj&L|TE|120V,0&1,#H&#,,,Lj&L|TE|120V|0&1|#H&#,TE,IT,None,No,No,TBD
+DI,Lj&L|WAGO|120V,0&1,#H&#,,,Lj&L|WAGO|120V|0&1|#H&#,WAGO,IT,None,No,No,TBD
+DI,Lj;L&Lc|PXC|120V,0;1&0,#A;#B&N,,INTERSTATES NF-MT,Lj;L&Lc|PXC|120V|0;1&0|#A;#B&N,PXC,MT&IT,None,No,Yes,TBD
+DI,Lj;L&Lc|TE|120V,0;1&0,#A;#B&N,,,Lj;L&Lc|TE|120V|0;1&0|#A;#B&N,TE,MT&IT,None,No,Yes,TBD
+DI,Lj;L&Lc|WAGO|120V,0;1&0,#A;#B&N,,,Lj;L&Lc|WAGO|120V|0;1&0|#A;#B&N,WAGO,MT&IT,None,No,Yes,TBD
+DI,,,,,NO TERMINALS,,,,,,,
+DI-120-3W,Fj&L&Lj|PXC|120V,0&1&2,#H&#&#N,,,Fj&L&Lj|PXC|120V|0&1&2|#H&#&#N,PXC,IT,Fused,No,No,TBD
+DI-120-3W,Fj&L&Lj|TE|120V,0&1&2,#H&#&#N,,,Fj&L&Lj|TE|120V|0&1&2|#H&#&#N,TE,IT,Fused,No,No,TBD
+DI-120-3W,Fj&L&Lj|WAGO|120V,0&1&2,#H&#&#N,,,Fj&L&Lj|WAGO|120V|0&1&2|#H&#&#N,WAGO,IT,Fused,No,No,TBD
+DI-120-3W,Lj&L&Lj|PXC|120V,0&1&2,#H&#&#N,,,Lj&L&Lj|PXC|120V|0&1&2|#H&#&#N,PXC,IT,None,No,No,TBD
+DI-120-3W,Lj&L&Lj|TE|120V,0&1&2,#H&#&#N,,,Lj&L&Lj|TE|120V|0&1&2|#H&#&#N,TE,IT,None,No,No,TBD
+DI-120-3W,Lj&L&Lj|WAGO|120V,0&1&2,#H&#&#N,,,Lj&L&Lj|WAGO|120V|0&1&2|#H&#&#N,WAGO,IT,None,No,No,TBD
+DI-120-3W,Lj;L;Lj|PXC|120V,0;1;2,#A;#B;#C,,,Lj;L;Lj|PXC|120V|0;1;2|#A;#B;#C,PXC,MT,None,No,No,TBD
+DI-120-3W,Lj;L;Lj|WAGO|120V,0;1;2,#A;#B;#C,,,Lj;L;Lj|WAGO|120V|0;1;2|#A;#B;#C,WAGO,MT,None,No,No,TBD
+DI-120-3W,,,,,NO TERMINALS,,,,,,,
+DO,F&Lc|PXC|120V,1&0,#&N,,,F&Lc|PXC|120V|1&0|#&N,PXC,IT,Fused,No,Yes,TBD
+DO,F&Lc|TE|120V,1&0,#&N,,,F&Lc|TE|120V|1&0|#&N,TE,IT,Fused,No,Yes,TBD
+DO,F&Lc|WAGO|120V,1&0,#&N,,,F&Lc|WAGO|120V|1&0|#&N,WAGO,IT,Fused,No,Yes,TBD
+DO,F&Le2|PXC|120V,1&2,#&#N,,,F&Le2|PXC|120V|1&2|#&#N,PXC,IT,Fused,No,No,TBD
+DO,F&Le2|TE|120V,1&2,#&#N,,,F&Le2|TE|120V|1&2|#&#N,TE,IT,Fused,No,No,TBD
+DO,F&Le2|WAGO|120V,1&2,#&#N,,,F&Le2|WAGO|120V|1&2|#&#N,WAGO,IT,Fused,No,No,TBD
+DO,F;Lj|PXC|120V,1;2,#A;#B,,,F;Lj|PXC|120V|1;2|#A;#B,PXC,MT,Fused,No,No,TBD
+DO,F;Lj|TE|120V,1;2,#A;#B,,,F;Lj|TE|120V|1;2|#A;#B,TE,MT,Fused,No,No,TBD
+DO,F;Lj|WAGO|120V,1;2,#A;#B,,,F;Lj|WAGO|120V|1;2|#A;#B,WAGO,MT,Fused,No,No,TBD
+DO,F|PXC|120V,1,#,,,F|PXC|120V|1|#,PXC,IT,Fused,No,No,TBD
+DO,F|TE|120V,1,#,,,F|TE|120V|1|#,TE,IT,Fused,No,No,TBD
+DO,F|WAGO|120V,1,#,,,F|WAGO|120V|1|#,WAGO,IT,Fused,No,No,TBD
+DO,L&Le2|PXC|120v,1&2,#&#N,,,L&Le2|PXC|120v|1&2|#&#N,PXC,IT,None,No,No,TBD
+DO,L&Le2|TE|120v,1&2,#&#N,,,L&Le2|TE|120v|1&2|#&#N,TE,IT,None,No,No,TBD
+DO,L&Le2|WAGO|120v,1&2,#&#N,,,L&Le2|WAGO|120v|1&2|#&#N,WAGO,IT,None,No,No,TBD
+DO,L;Lj|PXC|120V,1;2,#A;#B,,,L;Lj|PXC|120V|1;2|#A;#B,PXC,MT,None,No,No,TBD
+DO,L;Lj|TE|120V,1;2,#A;#B,,,L;Lj|TE|120V|1;2|#A;#B,TE,MT,None,No,No,TBD
+DO,L;Lj|WAGO|120V,1;2,#A;#B,,,L;Lj|WAGO|120V|1;2|#A;#B,WAGO,MT,None,No,No,TBD
+DO,L|PXC|120V,1,#,,,L|PXC|120V|1|#,PXC,IT,None,No,No,TBD
+DO,L|TE|120V,1,#,,,L|TE|120V|1|#,TE,IT,None,No,No,TBD
+DO,L|WAGO|120V,1,#,,,L|WAGO|120V|1|#,WAGO,IT,None,No,No,TBD
+DO,Lh&F&Lc|PXC|120V,0&1&0,H&#&N,,,Lh&F&Lc|PXC|120V|0&1&0|H&#&N,PXC,IT,Fused,Yes,Yes,TBD
+DO,Lh&F&Lc|TE|120V,0&1&0,H&#&N,,,Lh&F&Lc|TE|120V|0&1&0|H&#&N,TE,IT,Fused,Yes,Yes,TBD
+DO,Lh&F&Lc|WAGO|120V,0&1&0,H&#&N,,,Lh&F&Lc|WAGO|120V|0&1&0|H&#&N,WAGO,IT,Fused,Yes,Yes,TBD
+DO,Lh&F&Le2|PXC|120V,0&1&2,H&#&#N,,,Lh&F&Le2|PXC|120V|0&1&2|H&#&#N,PXC,IT,Fused,Yes,No,TBD
+DO,Lh&F&Le2|TE|120V,0&1&2,H&#&#N,,,Lh&F&Le2|TE|120V|0&1&2|H&#&#N,TE,IT,Fused,Yes,No,TBD
+DO,Lh&F&Le2|WAGO|120V,0&1&2,H&#&#N,,,Lh&F&Le2|WAGO|120V|0&1&2|H&#&#N,WAGO,IT,Fused,Yes,No,TBD
+DO,Lh&F&Le2j|PXC|120V,0&1&2,H&#&N,,INTERSTATES F-IT,Lh&F&Le2j|PXC|120V|0&1&2|H&#&N,PXC,IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj&G2|PXC|120V,0&1;2&3,H&#A;#B&SH,,,Lh&F;Lj&G2|PXC|120V|0&1;2&3|H&#A;#B&SH,PXC,MT&IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj&G2|TE|120V,0&1;2&3,H&#A;#B&SH,,,Lh&F;Lj&G2|TE|120V|0&1;2&3|H&#A;#B&SH,TE,MT&IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj&G2|WAGO|120V,0&1;2&3,H&#A;#B&SH,,,Lh&F;Lj&G2|WAGO|120V|0&1;2&3|H&#A;#B&SH,WAGO,MT&IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj&Lc|PXC|120V,0&1;2&0,H&#A;#B&N,,,Lh&F;Lj&Lc|PXC|120V|0&1;2&0|H&#A;#B&N,PXC,MT&IT,Fused,Yes,Yes,TBD
+DO,Lh&F;Lj&Lc|TE|120V,0&1;2&0,H&#A;#B&N,,,Lh&F;Lj&Lc|TE|120V|0&1;2&0|H&#A;#B&N,TE,MT&IT,Fused,Yes,Yes,TBD
+DO,Lh&F;Lj&Lc|WAGO|120V,0&1;2&0,H&#A;#B&N,,,Lh&F;Lj&Lc|WAGO|120V|0&1;2&0|H&#A;#B&N,WAGO,MT&IT,Fused,Yes,Yes,TBD
+DO,Lh&F;Lj|PXC|120V,0&1;2,H&#A;#B,,INTERSTATES F-MT,Lh&F;Lj|PXC|120V|0&1;2|H&#A;#B,PXC,MT&IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj|TE|120V,0&1;2,H&#A;#B,,AGP F-MT,Lh&F;Lj|TE|120V|0&1;2|H&#A;#B,TE,MT&IT,Fused,Yes,No,TBD
+DO,Lh&F;Lj|WAGO|120V,0&1;2,H&#A;#B,,,Lh&F;Lj|WAGO|120V|0&1;2|H&#A;#B,WAGO,MT&IT,Fused,Yes,No,TBD
+DO,Lh&L&Lc|PXC|120V,0&1&0,H&#&N,,,Lh&L&Lc|PXC|120V|0&1&0|H&#&N,PXC,IT,None,Yes,Yes,TBD
+DO,Lh&L&Lc|TE|120V,0&1&0,H&#&N,,,Lh&L&Lc|TE|120V|0&1&0|H&#&N,TE,IT,None,Yes,Yes,TBD
+DO,Lh&L&Lc|WAGO|120V,0&1&0,H&#&N,,,Lh&L&Lc|WAGO|120V|0&1&0|H&#&N,WAGO,IT,None,Yes,Yes,TBD
+DO,Lh&L&Le2|PXC|120v,0&1&2,H&#&#N,,,Lh&L&Le2|PXC|120v|0&1&2|H&#&#N,PXC,IT,None,Yes,No,TBD
+DO,Lh&L&Le2|TE|120v,0&1&2,H&#&#N,,,Lh&L&Le2|TE|120v|0&1&2|H&#&#N,TE,IT,None,Yes,No,TBD
+DO,Lh&L&Le2|WAGO|120v,0&1&2,H&#&#N,,,Lh&L&Le2|WAGO|120v|0&1&2|H&#&#N,WAGO,IT,None,Yes,No,TBD
+DO,Lh&L&Le2j|PXC|120V,0&1&2,H&#&N,,INTERSTATES NF-IT,Lh&L&Le2j|PXC|120V|0&1&2|H&#&N,PXC,IT,None,Yes,No,TBD
+DO,Lh&L;Lj|PXC|120V,0&1;2,H&#A;#B,,INTERSTATES NF-IT,Lh&L;Lj|PXC|120V|0&1;2|H&#A;#B,PXC,MT,None,Yes,No,TBD
+DO,Lh&L;Lj|TE|120V,0&1;2,H&#A;#B,,,Lh&L;Lj|TE|120V|0&1;2|H&#A;#B,TE,MT,None,Yes,No,TBD
+DO,Lh&L;Lj|WAGO|120V,0&1;2,H&#A;#B,,,Lh&L;Lj|WAGO|120V|0&1;2|H&#A;#B,WAGO,MT,None,Yes,No,TBD
+DO,,,,,NO TERMINALS,,,,,,,
+DORLY-120,F&L|PXC|120V,0&1,#H&#,,INTERSTATES F-IT,F&L|PXC|120V|0&1|#H&#,PXC,IT,Fused,No,No,TBD
+DORLY-120,F;L|PXC|120V,0;1,#A;#B,,INTERSTATES F-MT,F;L|PXC|120V|0;1|#A;#B,PXC,MT,Fused,No,No,TBD
+DORLY-120,F;L|TE|120V,0;1,#A;#B,,AGP F-MT,F;L|TE|120V|0;1|#A;#B,TE,MT,Fused,No,No,TBD
+DORLY-120,L&L|PXC|120V,0&1,#H&#,,INTERSTATES NF-IT,L&L|PXC|120V|0&1|#H&#,PXC,IT,None,No,No,TBD
+DORLY-120,L;L|PXC|120V,0;1,#A;#B,,INTERSTATES NF-MT,L;L|PXC|120V|0;1|#A;#B,PXC,MT,None,No,No,TBD
+DORLY-120,,,,,NO TERMINALS,,,,,,,
+DORLY-120-J,Lh&F&Le2j|PXC|120V,0&1&2,H&#&N,,INTERSTATES F-IT,Lh&F&Le2j|PXC|120V|0&1&2|H&#&N,PXC,IT,Fused,Yes,No,TBD
+DORLY-120-J,Lh&F;Lj|PXC|120V,0&1;2,H&#A;#B,,INTERSTATES F-MT,Lh&F;Lj|PXC|120V|0&1;2|H&#A;#B,PXC,MT&IT,Fused,Yes,No,TBD
+DORLY-120-J,Lh&L&Le2j|PXC|120V,0&1&2,H&#&N,,INTERSTATES NF-IT,Lh&L&Le2j|PXC|120V|0&1&2|H&#&N,PXC,IT,None,Yes,No,TBD
+DORLY-120-J,Lh&L;Lj|PXC|120V,0&1;2,H&#A;#B,,INTERSTATES NF-MT,Lh&L;Lj|PXC|120V|0&1;2|H&#A;#B,PXC,MT,None,Yes,No,TBD
+DORLY-120-J,,,,,NO TERMINALS,,,,,,,
+DORLY-24,F&L|PXC|24V,0&1,#+&#,,INTERSTATES F-IT,F&L|PXC|24V|0&1|#+&#,PXC,IT,None,No,No,TBD
+DORLY-24,F&L|TE|24V,0&1,#+&#,,,F&L|TE|24V|0&1|#+&#,TE,IT,None,No,No,TBD
+DORLY-24,F&L|WAGO|24V,0&1,#+&#,,,F&L|WAGO|24V|0&1|#+&#,WAGO,IT,None,No,No,TBD
+DORLY-24,F;L|PXC|24V,0;1,#A;#B,,INTERSTATES F-MT,F;L|PXC|24V|0;1|#A;#B,PXC,IT,Fused,No,No,TBD
+DORLY-24,L&L|PXC|24V,0&1,#+&#,,INTERSTATES NF-IT,L&L|PXC|24V|0&1|#+&#,PXC,IT,None,No,No,TBD
+DORLY-24,L;L|PXC|24V,0;1,#A;#B,,INTERSTATES NF-MT,L;L|PXC|24V|0;1|#A;#B,PXC,IT,None,No,No,TBD
+DORLY-24,,,,,NO TERMINALS,,,,,,,
+DORLY-24-J,Lh&F&Le2j|PXC|24V,0&1&2,+&#&C,,INTERSTATES F-IT,Lh&F&Le2j|PXC|24V|0&1&2|+&#&C,PXC,IT,Fused,Yes,No,TBD
+DORLY-24-J,Lh&F;Lj|PXC|24V,0&1;2,H&#A;#B,,INTERSTATES F-MT,Lh&F;Lj|PXC|24V|0&1;2|H&#A;#B,PXC,MT,Fused,Yes,No,TBD
+DORLY-24-J,Lh&L&Le2j|PXC|24V,0&1&2,+&#&C,,INTERSTATES NF-IT,Lh&L&Le2j|PXC|24V|0&1&2|+&#&C,PXC,IT,None,Yes,No,TBD
+DORLY-24-J,Lh&L;Lj|PXC|24V,0&1;2,+&#A;#B,,INTERSTATES NF-MT,Lh&L;Lj|PXC|24V|0&1;2|+&#A;#B,PXC,MT,None,Yes,No,TBD
+DORLY-24-J,,,,,NO TERMINALS,,,,,,,
+IDCI-SNK,L&L|PXC|24V,1&2,#&#C,,,L&L|PXC|24V|1&2|#&#C,PXC,IT,None,No,No,TBD
+IDCI-SNK,L&L|TE|24V,1&2,#&#C,,,L&L|TE|24V|1&2|#&#C,TE,IT,None,No,No,TBD
+IDCI-SNK,L&L|WAGO|24V,1&2,#&#C,,,L&L|WAGO|24V|1&2|#&#C,WAGO,IT,None,No,No,TBD
+IDCI-SNK,L;L|PXC|24V,1;2,#A;#B,,,L;L|PXC|24V|1;2|#A;#B,PXC,IT,None,No,No,TBD
+IDCI-SNK,L;L|TE|24V,1;2,#A;#B,,,L;L|TE|24V|1;2|#A;#B,TE,IT,None,No,No,TBD
+IDCI-SNK,L;L|WAGO|24V,1;2,#A;#B,,,L;L|WAGO|24V|1;2|#A;#B,WAGO,IT,None,No,No,TBD
+IDCI-SNK,Lj;L;Lj|PXC|24V,0;1;2,#H;#;#C,,,Lj;L;Lj|PXC|24V|0;1;2|#H;#;#C,PXC,MT,None,No,No,TBD
+IDCI-SNK,Lj;L;Lj|TE|24V,0;1;2,#H;#;#C,,,Lj;L;Lj|TE|24V|0;1;2|#H;#;#C,TE,MT,None,No,No,TBD
+IDCI-SNK,Lj;L;Lj|WAGO|24V,0;1;2,#H;#;#C,,,Lj;L;Lj|WAGO|24V|0;1;2|#H;#;#C,WAGO,MT,None,No,No,TBD
+IDCI-SNK,,,,,NO TERMINALS,,,,,,,
+IDCI-SNK-J,L|PXC|24V,1,#,,INTERSTATES NF-IT,L|PXC|24V|1|#,PXC,IT,None,No,No,TBD
+IDCI-SNK-J,L|TE|24V,1,#,,,L|TE|24V|1|#,TE,IT,None,No,No,TBD
+IDCI-SNK-J,L|WAGO|24V,1,#,,,L|WAGO|24V|1|#,WAGO,IT,None,No,No,TBD
+IDCI-SNK-J,Lj;L;Lj|PXC|120V,0;1;2,#A;#B;#C,,INTERSTATES NF-MT,Lj;L;Lj|PXC|120V|0;1;2|#A;#B;#C,PXC,MT,None,No,No,TBD
+IDCI-SNK-J,Lj;L;Lj|WAGO|120V,0;1;2,#A;#B;#C,,,Lj;L;Lj|WAGO|120V|0;1;2|#A;#B;#C,WAGO,MT,None,No,No,TBD
+IDCI-SNK-J,,,,,NO TERMINALS,,,,,,,
+IDCI-SRC,L&L|PXC|24V,0&1,#H&#,,INTERSTATES NF-IT,L&L|PXC|24V|0&1|#H&#,PXC,IT,None,No,No,TBD
+IDCI-SRC,L&L|TE|24V,0&1,#H&#,,,L&L|TE|24V|0&1|#H&#,TE,IT,None,No,No,TBD
+IDCI-SRC,L&L|WAGO|24V,0&1,#H&#,,,L&L|WAGO|24V|0&1|#H&#,WAGO,IT,None,No,No,TBD
+IDCI-SRC,L;L|PXC|24V,0;1,#A;#B,,INTERSTATES NF-MT,L;L|PXC|24V|0;1|#A;#B,PXC,IT,None,No,No,TBD
+IDCI-SRC,L;L|TE|24V,0;1,#A;#B,,,L;L|TE|24V|0;1|#A;#B,TE,IT,None,No,No,TBD
+IDCI-SRC,L;L|WAGO|24V,0;1,#A;#B,,,L;L|WAGO|24V|0;1|#A;#B,WAGO,IT,None,No,No,TBD
+IDCI-SRC,,,,,NO TERMINALS,,,,,,,
+IDCI-SRC-J,L|PXC|24V,1,#,,INTERSTATES NF-IT,L|PXC|24V|1|#,PXC,IT,None,No,No,TBD
+IDCI-SRC-J,L|TE|24V,1,#,,,L|TE|24V|1|#,TE,IT,None,No,No,TBD
+IDCI-SRC-J,L|WAGO|24V,1,#,,,L|WAGO|24V|1|#,WAGO,IT,None,No,No,TBD
+IDCI-SRC-J,,,,,NO TERMINALS,,,,,,,
+IDCO-SRC-J,F&Le2j|PXC|24V,1&2,#&#C,,,F&Le2j|PXC|24V|1&2|#&#C,PXC,IT,Fused,No,No,TBD
+IDCO-SRC-J,F&Le2j|TE|24V,1&2,#&#C,,,F&Le2j|TE|24V|1&2|#&#C,TE,IT,Fused,No,No,TBD
+IDCO-SRC-J,F&Le2j|WAGO|24V,1&2,#&#C,,,F&Le2j|WAGO|24V|1&2|#&#C,WAGO,IT,Fused,No,No,TBD
+IDCO-SRC-J,F;Lj|PXC|24V,1;2,#A;#B,,INTERSTATES F-MT,F;Lj|PXC|24V|1;2|#A;#B,PXC,MT,Fused,No,No,TBD
+IDCO-SRC-J,F;Lj|TE|24V,1;2,#A;#B,,,F;Lj|TE|24V|1;2|#A;#B,TE,MT,Fused,No,No,TBD
+IDCO-SRC-J,F;Lj|WAGO|24V,1;2,#A;#B,,,F;Lj|WAGO|24V|1;2|#A;#B,WAGO,MT,Fused,No,No,TBD
+IDCO-SRC-J,F|PXC|24V,1,#,,INTERSTATES F-IT,F|PXC|24V|1|#,PXC,IT,Fused,No,No,TBD
+IDCO-SRC-J,F|TE|24V,1,#,,,F|TE|24V|1|#,TE,IT,Fused,No,No,TBD
+IDCO-SRC-J,F|WAGO|24V,1,#,,,F|WAGO|24V|1|#,WAGO,IT,Fused,No,No,TBD
+IDCO-SRC-J,L&Le2j|PXC|24V,1&2,#&#C,,,L&Le2j|PXC|24V|1&2|#&#C,PXC,IT,None,No,No,TBD
+IDCO-SRC-J,L&Le2j|TE|24V,1&2,#&#C,,,L&Le2j|TE|24V|1&2|#&#C,TE,IT,None,No,No,TBD
+IDCO-SRC-J,L&Le2j|WAGO|24V,1&2,#&#C,,,L&Le2j|WAGO|24V|1&2|#&#C,WAGO,IT,None,No,No,TBD
+IDCO-SRC-J,L;Lj|PXC|24V,1;2,#A;#B,,,L;Lj|PXC|24V|1;2|#A;#B,PXC,IT,None,No,No,TBD
+IDCO-SRC-J,L;Lj|TE|24V,1;2,#A;#B,,,L;Lj|TE|24V|1;2|#A;#B,TE,IT,None,No,No,TBD
+IDCO-SRC-J,L;Lj|WAGO|24V,1;2,#A;#B,,,L;Lj|WAGO|24V|1;2|#A;#B,WAGO,IT,None,No,No,TBD
+IDCO-SRC-J,Lh&F&Le2j|PXC|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|PXC|24V|0&1&2|H&#&#C,PXC,IT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&F&Le2j|TE|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|TE|24V|0&1&2|H&#&#C,TE,IT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&F&Le2j|WAGO|24V,0&1&2,H&#&#C,,,Lh&F&Le2j|WAGO|24V|0&1&2|H&#&#C,WAGO,IT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&F;Lj|PXC|24V,0&1;2,H&#A;#B,,INTERSTATES NF-MT,Lh&F;Lj|PXC|24V|0&1;2|H&#A;#B,PXC,MT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&F;Lj|TE|24V,0&1;2,H&#A;#B,,,Lh&F;Lj|TE|24V|0&1;2|H&#A;#B,TE,MT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&F;Lj|WAGO|24V,0&1;2,H&#A;#B,,,Lh&F;Lj|WAGO|24V|0&1;2|H&#A;#B,WAGO,MT,Fused,Yes,No,TBD
+IDCO-SRC-J,Lh&L&Le2j|PXC|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|PXC|24V|0&1&2|H&#&#C,PXC,IT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L&Le2j|TE|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|TE|24V|0&1&2|H&#&#C,TE,IT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L&Le2j|WAGO|24V,0&1&2,H&#&#C,,,Lh&L&Le2j|WAGO|24V|0&1&2|H&#&#C,WAGO,IT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L;Lj|PXC|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|PXC|24V|0&1;2|H&#A;#B,PXC,MT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L;Lj|TE|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|TE|24V|0&1;2|H&#A;#B,TE,MT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L;Lj|WAGO|24V,0&1;2,H&#A;#B,,,Lh&L;Lj|WAGO|24V|0&1;2|H&#A;#B,WAGO,MT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L|PXC|24V,0&1,H&#,,,Lh&L|PXC|24V|0&1|H&#,PXC,IT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L|TE|24V,0&1,H&#,,,Lh&L|TE|24V|0&1|H&#,TE,IT,None,Yes,No,TBD
+IDCO-SRC-J,Lh&L|WAGO|24V,0&1,H&#,,,Lh&L|WAGO|24V|0&1|H&#,WAGO,IT,None,Yes,No,TBD
+IDCO-SRC-J,,,,,NO TERMINALS,,,,,,,
+IDI,F&L|PXC|120V,1&2,#H&#,,INTERSTATES F-IT,F&L|PXC|120V|1&2|#H&#,PXC,IT,Fused,No,No,TBD
+IDI,F&L|TE|120V,1&2,#H&#,,,F&L|TE|120V|1&2|#H&#,TE,IT,Fused,No,No,TBD
+IDI,F&L|WAGO|120V,1&2,#H&#,,,F&L|WAGO|120V|1&2|#H&#,WAGO,IT,Fused,No,No,TBD
+IDI,F;L|PXC|120V,1;2,#A;#B,,INTERSTATES F-MT,F;L|PXC|120V|1;2|#A;#B,PXC,MT,Fused,No,No,TBD
+IDI,F;L|TE|120V,1;2,#A;#B,,,F;L|TE|120V|1;2|#A;#B,TE,MT,Fused,No,No,TBD
+IDI,F;L|WAGO|120V,1;2,#A;#B,,,F;L|WAGO|120V|1;2|#A;#B,WAGO,MT,Fused,No,No,TBD
+IDI,L&L|PXC|120V,1&2,#H&#,,INTERSTATES NF-IT,L&L|PXC|120V|1&2|#H&#,PXC,IT,None,No,No,TBD
+IDI,L&L|TE|120V,1&2,#H&#,,,L&L|TE|120V|1&2|#H&#,TE,IT,None,No,No,TBD
+IDI,L&L|WAGO|120V,1&2,#H&#,,,L&L|WAGO|120V|1&2|#H&#,WAGO,IT,None,No,No,TBD
+IDI,L;L|PXC|120V,1;2,#A;#B,,INTERSTATES NF-MT,L;L|PXC|120V|1;2|#A;#B,PXC,MT,None,No,No,TBD
+IDI,L;L|TE|120V,1;2,#A;#B,,,L;L|TE|120V|1;2|#A;#B,TE,MT,None,No,No,TBD
+IDI,L;L|WAGO|120V,1;2,#A;#B,,,L;L|WAGO|120V|1;2|#A;#B,WAGO,MT,None,No,No,TBD
+IDI,,,,,NO TERMINALS,,,,,,,
+IDI-J,L|PXC|120V,1,#,,INTERSTATES NF-IT,L|PXC|120V|1|#,PXC,IT,None,No,No,TBD
+IDI-J,L|TE|120V,1,#,,,L|TE|120V|1|#,TE,IT,None,No,No,TBD
+IDI-J,L|WAGO|120V,1,#,,,L|WAGO|120V|1|#,WAGO,IT,None,No,No,TBD
+IDI-J,,,,,NO TERMINALS,,,,,,,
+IDO,F&L|PXC|120V,1&2,#H&#,,INTERSTATES F-IT,F&L|PXC|120V|1&2|#H&#,PXC,IT,Fused,No,No,TBD
+IDO,F&L|TE|120V,1&2,#H&#,,,F&L|TE|120V|1&2|#H&#,TE,IT,Fused,No,No,TBD
+IDO,F&L|WAGO|120V,1&2,#H&#,,,F&L|WAGO|120V|1&2|#H&#,WAGO,IT,Fused,No,No,TBD
+IDO,F;L|PXC|120V,1;2,#A;#B,,INTERSTATES F-MT,F;L|PXC|120V|1;2|#A;#B,PXC,MT,Fused,No,No,TBD
+IDO,F;L|TE|120V,1;2,#A;#B,,,F;L|TE|120V|1;2|#A;#B,TE,MT,Fused,No,No,TBD
+IDO,F;L|WAGO|120V,1;2,#A;#B,,,F;L|WAGO|120V|1;2|#A;#B,WAGO,MT,Fused,No,No,TBD
+IDO,L&L|PXC|120V,1&2,#H&#,,INTERSTATES NF-IT,L&L|PXC|120V|1&2|#H&#,PXC,IT,None,No,No,TBD
+IDO,L&L|TE|120V,1&2,#H&#,,,L&L|TE|120V|1&2|#H&#,TE,IT,None,No,No,TBD
+IDO,L&L|WAGO|120V,1&2,#H&#,,,L&L|WAGO|120V|1&2|#H&#,WAGO,IT,None,No,No,TBD
+IDO,,,,,NO TERMINALS,,,,,,,
+IDO-J,F|PXC|120V,1,#,,INTERSTATES F-IT,F|PXC|120V|1|#,PXC,IT,Fused,No,No,TBD
+IDO-J,F|TE|120V,1,#,,,F|TE|120V|1|#,TE,IT,Fused,No,No,TBD
+IDO-J,F|WAGO|120V,1,#,,,F|WAGO|120V|1|#,WAGO,IT,Fused,No,No,TBD
+IDO-J,L|PXC|120V,1,#,,INTERSTATES NF-IT,L|PXC|120V|1|#,PXC,IT,None,No,No,TBD
+IDO-J,L|TE|120V,1,#,,,L|TE|120V|1|#,TE,IT,None,No,No,TBD
+IDO-J,L|WAGO|120V,1,#,,,L|WAGO|120V|1|#,WAGO,IT,None,No,No,TBD
+IDO-J,,,,,NO TERMINALS,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,

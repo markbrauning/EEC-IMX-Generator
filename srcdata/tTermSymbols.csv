@@ -1,0 +1,13 @@
+TermType,CardType,EPlanSymbol,Description,Picture
+F,INPUT,Interstates_Standard_Symbols;6;33;3,Fused,
+F,OUTPUT,Interstates_Standard_Symbols;6;33;1,Fused,
+G,INPUT,Interstates_Standard_Symbols;6;1450;3,Ground feed thru,
+G,OUTPUT,Interstates_Standard_Symbols;6;1450;5,Ground feed thru,
+K,INPUT,Interstates_Standard_Symbols;6;1233;3,Knife,
+K,OUTPUT,Interstates_Standard_Symbols;6;1233;5,Knife,
+L,INPUT,Interstates_Standard_Symbols;6;1117;3,Feed Thru,
+L,OUTPUT,Interstates_Standard_Symbols;6;1117;1,Feed Thru,
+P,INPUT,Interstates_Standard_Symbols;6;1451;3,Ground-1 side,
+P,OUTPUT,Interstates_Standard_Symbols;6;1451;1,Ground-1 side,
+T,INPUT,Interstates_Standard_Symbols;6;1417;3,2-to-1,
+T,OUTPUT,Interstates_Standard_Symbols;6;1417;5,2-to-1,

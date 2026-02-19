@@ -1,0 +1,19 @@
+table_name,worksheet,range,rows_excluding_header,columns,csv_file
+tSheets,Home,B10:E20,10,4,tSheets.csv
+tSheetGroups,Home,B4:C7,3,2,tSheetGroups.csv
+ITKRackLayout,RackLayout,A1:Z77,76,26,ITKRackLayout.csv
+ITKIOPoint,IOPoint,A1:AJ7,6,36,ITKIOPoint.csv
+tIMXOutputDir,DeveloperTools,E8:E10,2,1,tIMXOutputDir.csv
+tE104GenVersion,DeveloperTools,E2:E3,1,1,tE104GenVersion.csv
+tTHISE104GenVersion,DeveloperTools,E5:F6,1,2,tTHISE104GenVersion.csv
+tCardWiring,tCardWiring,A1:AK10033,10032,37,tCardWiring.csv
+tTermOptions,tTermOptions,A1:M493,492,13,tTermOptions.csv
+tTermCatalog,tTermOptions,O1:V58,57,8,tTermCatalog.csv
+tCables,tCables,A1:K322,321,11,tCables.csv
+tKeyingPattern,tKeyingPattern,A1:I2682,2681,9,tKeyingPattern.csv
+tKeyingMainMacro,tKeyingPattern,K1:L4,3,2,tKeyingMainMacro.csv
+tFuseSizes,tFuseSizes,A1:E306,305,5,tFuseSizes.csv
+tYCoords,EEC Lookups,E1:J41,40,6,tYCoords.csv
+tTermSymbols,EEC Lookups,L1:P13,12,5,tTermSymbols.csv
+EEC_Selection_Tables,EEC Lookups,R1:U24,23,4,EEC_Selection_Tables.csv
+tMacroList,EEC Lookups,A1:C122,121,3,tMacroList.csv
