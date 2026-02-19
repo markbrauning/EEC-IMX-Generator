@@ -39,22 +39,33 @@
     </section>
 
     <section class="card">
-      <h2>2) Select a site</h2>
-      <p class="subtle">
-        Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList</code>, filter to one row,
-        then use its <code>Site_ID</code>.
-      </p>
+  <h2>2) Select a site</h2>
+  <p class="subtle">
+    Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList.csv</code> and select a site to obtain its
+    <code>Site_ID</code>.
+  </p>
 
-      <div class="row">
-        <label class="label">Search</label>
-        <input id="siteSearch" class="input" type="search" placeholder="Type to filter sites..." disabled />
-        <div class="spacer"></div>
-        <div class="pill">Selected Site_ID: <code id="selectedSiteId">—</code></div>
-      </div>
+  <div class="row">
+    <div class="field">
+      <label class="label" for="customerSelect">Customer_Name</label>
+      <select id="customerSelect" class="select" disabled>
+        <option value="">—</option>
+      </select>
+    </div>
 
-      <div id="siteListHost" class="table-host subtle">Load tables to view sites.</div>
-      <div id="siteListMeta" class="subtle"></div>
-    </section>
+    <div class="field">
+      <label class="label" for="nameSelect">Name</label>
+      <select id="nameSelect" class="select" disabled>
+        <option value="">—</option>
+      </select>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="pill">Selected Site_ID: <code id="selectedSiteId">—</code></div>
+  </div>
+
+  <div id="siteListMeta" class="subtle"></div>
+</section>
 
     <section class="card">
       <h2>3) Generate IMX</h2>

@@ -147,3 +147,19 @@ h2{margin:0 0 10px 0;font-size:16px}
   margin:0 auto;
   padding:0 20px 20px 20px;
 }
+
+select.select{
+  width:min(420px, 100%);
+  padding:9px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#0f1318;
+  color:var(--text);
+  font-size:13px;
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:260px;
+}
