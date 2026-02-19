@@ -1,0 +1,11 @@
+GroupName,Visible,SheetName,Sort
+InterTrak,True,SiteList,1
+InterTrak,True,RackLayout,2
+InterTrak,True,IOPoint,3
+Typical Selecting,True,Typical Select,10
+Typical Lookup Tables,False,tCardWiring,20
+Typical Lookup Tables,True,tTermOptions,21
+Typical Lookup Tables,False,tCables,22
+Typical Lookup Tables,False,tKeyingPattern,23
+Typical Lookup Tables,False,tFuseSizes,24
+Typical Lookup Tables,False,EEC Lookups,99
