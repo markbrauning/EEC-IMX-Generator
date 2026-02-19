@@ -247,7 +247,7 @@ els.btnGenerate.addEventListener("click", () => {
     });
 
     els.genOutput.textContent =
-      `Generated IMX (placeholder)\n\n` +
+      `Generated IMX\n\n` +
       `Site_ID: ${sid}\n` +
       `Rack rows for site: ${result.stats.rackForSite}\n` +
       `IO rows for site: ${result.stats.ioForSite}\n\n` +
