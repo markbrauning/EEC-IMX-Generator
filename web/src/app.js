@@ -1,6 +1,5 @@
 import { CONFIG } from "./config.js";
-import { loadAllTables, deriveSiteListFromRackLayout } from "./data/loadTables.js";
-import { renderSiteList } from "./ui/siteListView.js";
+import { loadAllTables } from "./data/loadTables.js";
 import { generateIMX } from "./generator/imxGenerator.js";
 
 const els = {
@@ -10,8 +9,8 @@ const els = {
   progressText: document.getElementById("progressText"),
   tablesSummary: document.getElementById("tablesSummary"),
 
-  siteSearch: document.getElementById("siteSearch"),
-  siteListHost: document.getElementById("siteListHost"),
+  customerSelect: document.getElementById("customerSelect"),
+  nameSelect: document.getElementById("nameSelect"),
   siteListMeta: document.getElementById("siteListMeta"),
   selectedSiteId: document.getElementById("selectedSiteId"),
 
@@ -23,10 +22,10 @@ const els = {
 
 let state = {
   tables: null,
-  siteList: [],
-  selectedSite: null,
-  siteTableRenderer: null,
-  filteredSites: []
+  sites: [],
+  customers: [],
+  namesByCustomer: new Map(),
+  siteIdByCustomerName: new Map()
 };
 
 function setStatus(text) {
@@ -40,14 +39,12 @@ function setProgress(pct, text) {
 
 function summarizeTables(tables) {
   const keys = Object.keys(tables || {}).sort();
-  const lines = [];
-  for (const k of keys) {
+  return keys.map(k => {
     const t = tables[k];
     const n = t?.records?.length ?? 0;
     const c = t?.headers?.length ?? 0;
-    lines.push(`${k}: ${n} rows, ${c} cols`);
-  }
-  return lines.join("\n");
+    return `${k}: ${n} rows, ${c} cols`;
+  }).join("\n");
 }
 
 function clearWarnings() {
@@ -63,59 +60,120 @@ function showWarnings(list) {
   });
 }
 
-function enableSiteUI(enabled) {
-  els.siteSearch.disabled = !enabled;
-}
-
 function enableGenerate(enabled) {
   els.btnGenerate.disabled = !enabled;
 }
 
-function setSelectedSite(siteRecord) {
-  state.selectedSite = siteRecord;
-  const sid = siteRecord ? (siteRecord[CONFIG.SITE_ID_COLUMN] || siteRecord["Site_ID"] || "") : "";
-  els.selectedSiteId.textContent = sid || "—";
-  enableGenerate(Boolean(sid));
+function resetSelectionUI() {
+  els.customerSelect.innerHTML = `<option value="">—</option>`;
+  els.nameSelect.innerHTML = `<option value="">—</option>`;
+  els.customerSelect.disabled = true;
+  els.nameSelect.disabled = true;
+  els.selectedSiteId.textContent = "—";
+  els.siteListMeta.textContent = "";
+  enableGenerate(false);
 }
 
-function filterSites(query) {
-  const q = (query || "").trim().toLowerCase();
-  if (!q) return state.siteList;
+function buildSiteIndexes() {
+  const cols = CONFIG.SITE_LIST_COLUMNS;
+  const custCol = cols.CUSTOMER;
+  const nameCol = cols.NAME;
+  const idCol = cols.SITE_ID;
 
-  return state.siteList.filter(r => {
-    for (const [k, v] of Object.entries(r)) {
-      const s = (v ?? "").toString().toLowerCase();
-      if (s.includes(q)) return true;
+  state.customers = [];
+  state.namesByCustomer = new Map();
+  state.siteIdByCustomerName = new Map();
+
+  const seenCustomers = new Set();
+
+  for (const r of state.sites) {
+    const customer = (r[custCol] ?? "").toString().trim();
+    const name = (r[nameCol] ?? "").toString().trim();
+    const siteId = (r[idCol] ?? "").toString().trim();
+    if (!customer || !name || !siteId) continue;
+
+    if (!seenCustomers.has(customer)) {
+      seenCustomers.add(customer);
+      state.customers.push(customer);
+      state.namesByCustomer.set(customer, []);
     }
-    return false;
-  });
+
+    const names = state.namesByCustomer.get(customer);
+    if (names && !names.includes(name)) names.push(name);
+
+    const key = `${customer}||${name}`;
+    if (!state.siteIdByCustomerName.has(key)) {
+      // If duplicates exist, keep first encountered as requested
+      state.siteIdByCustomerName.set(key, siteId);
+    }
+  }
+
+  state.customers.sort((a, b) => a.localeCompare(b));
+  for (const [cust, names] of state.namesByCustomer.entries()) {
+    names.sort((a, b) => a.localeCompare(b));
+  }
 }
 
-function renderSites(records) {
-  if (!state.siteTableRenderer) {
-    // first render builds table structure
-    els.siteListHost.classList.remove("subtle");
-    const tableAPI = renderSiteList(els.siteListHost, records, {
-      maxRenderRows: CONFIG.MAX_RENDER_ROWS,
-      onSelect: (rec) => setSelectedSite(rec)
-    });
-    state.siteTableRenderer = tableAPI;
+function populateCustomers() {
+  els.customerSelect.innerHTML = `<option value="">—</option>`;
+  for (const c of state.customers) {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    els.customerSelect.appendChild(opt);
   }
-  const { shown, total } = state.siteTableRenderer.render(records);
-  els.siteListMeta.textContent = total > shown
-    ? `Showing ${shown} of ${total} filtered sites (render capped at ${CONFIG.MAX_RENDER_ROWS}).`
-    : `Showing ${shown} sites.`;
+  els.customerSelect.disabled = false;
+}
+
+function populateNames(customer) {
+  els.nameSelect.innerHTML = `<option value="">—</option>`;
+  const names = state.namesByCustomer.get(customer) || [];
+  for (const n of names) {
+    const opt = document.createElement("option");
+    opt.value = n;
+    opt.textContent = n;
+    els.nameSelect.appendChild(opt);
+  }
+  els.nameSelect.disabled = names.length === 0;
+
+  // If for some reason more than one item left later, your rule applies at Site_ID resolution time.
+  // Here, if only one name exists, we auto-select it for convenience.
+  if (names.length === 1) {
+    els.nameSelect.value = names[0];
+    const sid = deriveSiteId(customer, names[0]);
+    setSelectedSiteId(sid);
+  }
+}
+
+function setSelectedSiteId(siteId) {
+  els.selectedSiteId.textContent = siteId || "—";
+  enableGenerate(Boolean(siteId));
+}
+
+function deriveSiteId(customer, name) {
+  if (!customer || !name) return "";
+  return state.siteIdByCustomerName.get(`${customer}||${name}`) || "";
+}
+
+function downloadTextFile(filename, text) {
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  els.downloadLink.href = url;
+  els.downloadLink.download = filename;
+  els.downloadLink.style.display = "inline-flex";
+  els.downloadLink.textContent = `Download ${filename}`;
+
+  setTimeout(() => URL.revokeObjectURL(url), 60_000);
 }
 
 async function load() {
   setStatus("Loading…");
   setProgress(3, "Starting…");
-  enableSiteUI(false);
-  enableGenerate(false);
+  resetSelectionUI();
   els.downloadLink.style.display = "none";
   els.genOutput.textContent = "";
   clearWarnings();
-  setSelectedSite(null);
 
   try {
     const tables = await loadAllTables({
@@ -137,55 +195,41 @@ async function load() {
     els.tablesSummary.textContent = summarizeTables(tables);
     setStatus("Loaded");
 
-    // Choose site list source
-    const siteTable = tables[CONFIG.SITE_LIST_TABLE_NAME]?.records;
-    if (Array.isArray(siteTable) && siteTable.length) {
-      state.siteList = siteTable;
-    } else {
-      // fallback
-      state.siteList = deriveSiteListFromRackLayout(tables, CONFIG.SITE_ID_COLUMN);
-      showWarnings([
-        `Site list table '${CONFIG.SITE_LIST_TABLE_NAME}' not found. Using derived list from ITKRackLayout (${state.siteList.length} sites).`
-      ]);
-    }
+    state.sites = tables[CONFIG.SITE_LIST_TABLE_NAME]?.records || [];
 
-    // Initial render
-    state.filteredSites = state.siteList;
-    els.siteSearch.value = "";
-    enableSiteUI(true);
+    // Validate required columns
+    const cols = CONFIG.SITE_LIST_COLUMNS;
+    const headers = tables[CONFIG.SITE_LIST_TABLE_NAME]?.headers || [];
+    const missing = [cols.CUSTOMER, cols.NAME, cols.SITE_ID].filter(c => !headers.includes(c));
+    if (missing.length) throw new Error(`ITKSiteList.csv is missing required column(s): ${missing.join(", ")}`);
 
-    // Build table renderer with initial list
-    state.siteTableRenderer = null;
-    renderSites(state.filteredSites);
-
+    buildSiteIndexes();
+    populateCustomers();
+    els.siteListMeta.textContent = `Loaded ${state.sites.length} site rows. Select Customer_Name, then Name.`;
   } catch (err) {
     setStatus("Error");
     setProgress(0, "Failed");
-    els.siteListHost.textContent = "Failed to load tables. See details below.";
     els.genOutput.textContent = String(err?.stack || err);
     showWarnings([String(err?.message || err)]);
   }
 }
 
-function downloadTextFile(filename, text) {
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-
-  els.downloadLink.href = url;
-  els.downloadLink.download = filename;
-  els.downloadLink.style.display = "inline-flex";
-  els.downloadLink.textContent = `Download ${filename}`;
-
-  // Revoke URL later to avoid memory leak
-  setTimeout(() => URL.revokeObjectURL(url), 60_000);
-}
-
 els.btnReload.addEventListener("click", () => load());
 
-els.siteSearch.addEventListener("input", (e) => {
-  const q = e.target.value || "";
-  state.filteredSites = filterSites(q);
-  renderSites(state.filteredSites);
+els.customerSelect.addEventListener("change", () => {
+  const customer = els.customerSelect.value || "";
+  els.nameSelect.value = "";
+  setSelectedSiteId("");
+  populateNames(customer);
+});
+
+els.nameSelect.addEventListener("change", () => {
+  const customer = els.customerSelect.value || "";
+  const name = els.nameSelect.value || "";
+  const siteId = deriveSiteId(customer, name);
+
+  // If duplicates ever exist, deriveSiteId returns the first one (as requested).
+  setSelectedSiteId(siteId);
 });
 
 els.btnGenerate.addEventListener("click", () => {
@@ -193,8 +237,8 @@ els.btnGenerate.addEventListener("click", () => {
     clearWarnings();
     els.genOutput.textContent = "";
 
-    const sid = (state.selectedSite?.[CONFIG.SITE_ID_COLUMN] || "").toString().trim();
-    if (!sid) throw new Error("Select a site first.");
+    const sid = (els.selectedSiteId.textContent || "").toString().trim();
+    if (!sid || sid === "—") throw new Error("Select Customer_Name and Name first.");
 
     const result = generateIMX({
       tables: state.tables,
@@ -213,13 +257,11 @@ els.btnGenerate.addEventListener("click", () => {
     if (result.warnings?.length) showWarnings(result.warnings);
 
     const safeSid = sid.replace(/[^a-zA-Z0-9\-_.]/g, "_");
-    const filename = `E104_${safeSid}.imx`;
-    downloadTextFile(filename, result.imxText);
+    downloadTextFile(`E104_${safeSid}.imx`, result.imxText);
   } catch (err) {
     showWarnings([String(err?.message || err)]);
     els.genOutput.textContent = String(err?.stack || err);
   }
 });
 
-// Kick off initial load
 load();
