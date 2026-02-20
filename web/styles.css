@@ -81,6 +81,20 @@ h2{margin:0 0 8px 0;font-size:16px}
   padding:8px;
 }
 
+
+.site-selection-card{
+  padding:6px 8px;
+}
+.site-selection-card h2{
+  margin-bottom:4px;
+}
+.site-selection-card .row{
+  gap:6px;
+}
+.site-selection-card #siteListMeta{
+  margin-top:2px;
+}
+
 .row{
   display:flex;
   gap:8px;
@@ -183,7 +197,7 @@ h2{margin:0 0 8px 0;font-size:16px}
 
 select.select{
   width:min(420px, 100%);
-  padding:7px 10px;
+  padding:6px 10px;
   border-radius:8px;
   border:1px solid var(--border);
   background:var(--surface);
@@ -193,7 +207,7 @@ select.select{
 .field{
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:4px;
   min-width:260px;
 }
 
@@ -203,4 +217,4 @@ select.select{
 .theme-field{min-width:180px}
 .theme-field .select{width:min(220px, 100%)}
 
-.thin-field{min-width:220px}
+.thin-field{min-width:200px}
