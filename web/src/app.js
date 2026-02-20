@@ -112,7 +112,7 @@ function refreshCardPreview() {
     return;
   }
 
-  const generationResult = generateOutput({ silent: true });
+  const generationResult = generateOutput({ silent: false });
   const warningsByRackSlot = mapWarningsByRackSlot(generationResult?.warnings || []);
   setCardPreview(els, getCardsForSite(siteId, warningsByRackSlot), siteId);
 }
@@ -193,7 +193,9 @@ async function load() {
 
 function generateOutput({ silent = false } = {}) {
   try {
-    els.genOutput.textContent = "";
+    if (!silent) {
+      els.genOutput.textContent = "";
+    }
 
     const siteId = resolveCurrentSiteId();
     if (!siteId) {
@@ -215,7 +217,6 @@ function generateOutput({ silent = false } = {}) {
         result.imxText;
     }
 
-
     const safeSiteId = siteId.replace(/[^a-zA-Z0-9\-_.]/g, "_");
     downloadTextFile(els, `E104_${safeSiteId}.imx`, result.imxText);
     return result;
@@ -231,10 +232,10 @@ function mapWarningsByRackSlot(warnings) {
   const byRackSlot = new Map();
   for (const warning of warnings || []) {
     const text = String(warning || "");
-    const delim = text.indexOf(":");
+    const delim = text.lastIndexOf(": ");
     if (delim <= 0) continue;
     const rackSlot = text.slice(0, delim).trim();
-    const message = text.slice(delim + 1).trim();
+    const message = text.slice(delim + 2).trim();
     if (!rackSlot || !message) continue;
     const current = byRackSlot.get(rackSlot) || [];
     current.push(message);
