@@ -10,10 +10,8 @@
   <header class="app-header">
     <div>
       <h1>EEC IMX Generator (E104)</h1>
-      <div class="subtle">Static web UI • CSVs served from <code>/srcdata</code> • Generator runs in-browser</div>
     </div>
     <div class="field theme-field">
-      <label class="label" for="themeSelect">UI Theme</label>
       <select id="themeSelect" class="select">
         <option value="dark">Dark Mode</option>
         <option value="gray">Gray Mode</option>
@@ -24,7 +22,61 @@
 
   <main class="app">
     <section class="card">
-      <h2>1) Load data</h2>
+      <h2>Site selection</h2>
+      <p class="subtle">
+        Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList.csv</code> and select Customer_Name and Name.
+      </p>
+
+      <div class="row">
+        <div class="field thin-field">
+          <label class="label" for="customerSelect">Customer_Name</label>
+          <select id="customerSelect" class="select" disabled>
+            <option value="">—</option>
+          </select>
+        </div>
+
+        <div class="field thin-field">
+          <label class="label" for="nameSelect">Name</label>
+          <select id="nameSelect" class="select" disabled>
+            <option value="">—</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="siteListMeta" class="subtle"></div>
+    </section>
+
+    <section class="card">
+      <h2>IMX generation</h2>
+      <p class="subtle">
+        Generator is kept in <code>src/generator/</code> and does not depend on the UI. Later you can move it to a backend service.
+      </p>
+
+      <div class="row preview-header">
+        <h3 class="preview-title">IO Card preview</h3>
+        <button id="btnRefreshCards" class="btn" disabled title="Reload ITKRackLayout.csv">↻ Refresh Cards</button>
+      </div>
+      <div id="cardPreviewMeta" class="subtle">Select a site to preview included IO cards.</div>
+      <pre id="cardPreview" class="pre">—</pre>
+
+      <div class="row">
+        <button id="btnGenerate" class="btn btn-primary" disabled>Generate IMX</button>
+        <a id="downloadLink" class="btn btn-secondary" download style="display:none">Download IMX</a>
+      </div>
+
+      <details class="details">
+        <summary>Generation output</summary>
+        <pre id="genOutput" class="pre"></pre>
+      </details>
+
+      <details class="details">
+        <summary>Warnings</summary>
+        <ul id="warnings" class="warnings"></ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Load data</h2>
       <p class="subtle">
         This app loads all CSV tables at startup (Option A). Place the exported CSVs and <code>_manifest.csv</code> in
         <code>web/srcdata/</code>.
@@ -43,60 +95,6 @@
       <details class="details">
         <summary>Loaded tables</summary>
         <pre id="tablesSummary" class="pre"></pre>
-      </details>
-    </section>
-
-    <section class="card">
-  <h2>2) Select a site</h2>
-  <p class="subtle">
-    Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList.csv</code> and select Customer_Name and Name.
-  </p>
-
-  <div class="row">
-    <div class="field">
-      <label class="label" for="customerSelect">Customer_Name</label>
-      <select id="customerSelect" class="select" disabled>
-        <option value="">—</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label class="label" for="nameSelect">Name</label>
-      <select id="nameSelect" class="select" disabled>
-        <option value="">—</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="siteListMeta" class="subtle"></div>
-
-  <div class="row preview-header">
-    <h3 class="preview-title">IO Cards preview</h3>
-    <button id="btnRefreshCards" class="btn" disabled title="Reload ITKRackLayout.csv">↻ Refresh Cards</button>
-  </div>
-  <div id="cardPreviewMeta" class="subtle">Select a site to preview included IO cards.</div>
-  <pre id="cardPreview" class="pre">—</pre>
-</section>
-
-    <section class="card">
-      <h2>3) Generate IMX</h2>
-      <p class="subtle">
-        Generator is kept in <code>src/generator/</code> and does not depend on the UI. Later you can move it to a backend service.
-      </p>
-
-      <div class="row">
-        <button id="btnGenerate" class="btn btn-primary" disabled>Generate IMX</button>
-        <a id="downloadLink" class="btn btn-secondary" download style="display:none">Download IMX</a>
-      </div>
-
-      <details class="details">
-        <summary>Generation output</summary>
-        <pre id="genOutput" class="pre"></pre>
-      </details>
-
-      <details class="details">
-        <summary>Warnings</summary>
-        <ul id="warnings" class="warnings"></ul>
       </details>
     </section>
   </main>
