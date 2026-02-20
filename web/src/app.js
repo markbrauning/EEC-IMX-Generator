@@ -105,7 +105,7 @@ function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
 
 function refreshCardPreview() {
   const siteId = resolveCurrentSiteId();
-  els.btnRefreshCards.disabled = !siteId;
+  els.btnRefresh.disabled = !siteId;
 
   if (!siteId) {
     setCardPreview(els, [], "");
@@ -248,7 +248,7 @@ els.btnReload.addEventListener("click", load);
 els.themeSelect?.addEventListener("change", onThemeChanged);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
-els.btnRefreshCards.addEventListener("click", refreshCardPreview);
+els.btnRefresh.addEventListener("click", refreshCardPreview);
 
 initializeTheme();
 load();
