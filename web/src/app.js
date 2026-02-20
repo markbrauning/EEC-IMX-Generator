@@ -27,16 +27,41 @@ let state = {
   siteIdByCustomerName: new Map()
 };
 
+
+const THEME_KEY = "imx-ui-theme";
+
+function applyTheme(theme) {
+  const allowedThemes = new Set(["dark", "gray", "light"]);
+  const nextTheme = allowedThemes.has(theme) ? theme : "dark";
+  document.documentElement.dataset.theme = nextTheme;
+  if (els.themeSelect) els.themeSelect.value = nextTheme;
+  try {
+    localStorage.setItem(THEME_KEY, nextTheme);
+  } catch {
+    // Ignore storage errors (private mode, etc.)
+  }
+}
+
+function initializeTheme() {
+  let savedTheme = "dark";
+  try {
+    savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+  } catch {
+    savedTheme = "dark";
+  }
+  applyTheme(savedTheme);
+}
+
+function onThemeChanged() {
+  applyTheme(els.themeSelect?.value || "dark");
+}
+
 function getSelectedCustomer() {
   return els.customerSelect.value || "";
 }
 
 function getSelectedName() {
   return els.nameSelect.value || "";
-}
-
-function getSelectedSiteId() {
-  return (els.selectedSiteId.textContent || "").toString().trim();
 }
 
 function resolveCurrentSiteId() {
@@ -165,8 +190,8 @@ function generateOutput() {
     clearWarnings(els);
     els.genOutput.textContent = "";
 
-    const siteId = getSelectedSiteId();
-    if (!siteId || siteId === "—") {
+    const siteId = resolveCurrentSiteId();
+    if (!siteId) {
       throw new Error("Select Customer_Name and Name first.");
     }
 
@@ -178,7 +203,6 @@ function generateOutput() {
 
     els.genOutput.textContent =
       `Generated IMX\n\n` +
-      `Site_ID: ${siteId}\n` +
       `Rack rows for site: ${result.stats.rackForSite}\n` +
       `IO rows for site: ${result.stats.ioForSite}\n\n` +
       `IMX Preview:\n----------------\n` +
@@ -195,9 +219,11 @@ function generateOutput() {
 }
 
 els.btnReload.addEventListener("click", load);
+els.themeSelect?.addEventListener("change", onThemeChanged);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
 els.btnGenerate.addEventListener("click", generateOutput);
 els.btnRefreshCards.addEventListener("click", refreshCardPreview);
 
+initializeTheme();
 load();

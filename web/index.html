@@ -12,6 +12,14 @@
       <h1>EEC IMX Generator (E104)</h1>
       <div class="subtle">Static web UI • CSVs served from <code>/srcdata</code> • Generator runs in-browser</div>
     </div>
+    <div class="field theme-field">
+      <label class="label" for="themeSelect">UI Theme</label>
+      <select id="themeSelect" class="select">
+        <option value="dark">Dark Mode</option>
+        <option value="gray">Gray Mode</option>
+        <option value="light">Light Mode</option>
+      </select>
+    </div>
   </header>
 
   <main class="app">
@@ -41,8 +49,7 @@
     <section class="card">
   <h2>2) Select a site</h2>
   <p class="subtle">
-    Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList.csv</code> and select a site to obtain its
-    <code>Site_ID</code>.
+    Equivalent to the Excel <strong>SiteList</strong> sheet: load <code>ITKSiteList.csv</code> and select Customer_Name and Name.
   </p>
 
   <div class="row">
@@ -59,9 +66,6 @@
         <option value="">—</option>
       </select>
     </div>
-
-    <div class="spacer"></div>
-    <div class="pill">Selected Site_ID: <code id="selectedSiteId">—</code></div>
   </div>
 
   <div id="siteListMeta" class="subtle"></div>

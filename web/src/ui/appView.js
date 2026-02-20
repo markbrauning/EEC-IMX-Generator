@@ -8,7 +8,7 @@ export function getAppElements() {
     customerSelect: document.getElementById("customerSelect"),
     nameSelect: document.getElementById("nameSelect"),
     siteListMeta: document.getElementById("siteListMeta"),
-    selectedSiteId: document.getElementById("selectedSiteId"),
+    themeSelect: document.getElementById("themeSelect"),
     btnRefreshCards: document.getElementById("btnRefreshCards"),
     cardPreviewMeta: document.getElementById("cardPreviewMeta"),
     cardPreview: document.getElementById("cardPreview"),
@@ -62,7 +62,6 @@ export function resetSelectionUi(els) {
   els.nameSelect.innerHTML = `<option value="">—</option>`;
   els.customerSelect.disabled = true;
   els.nameSelect.disabled = true;
-  els.selectedSiteId.textContent = "—";
   els.siteListMeta.textContent = "";
   enableGenerate(els, false);
   els.btnRefreshCards.disabled = true;
@@ -92,23 +91,18 @@ export function populateNames(els, names) {
 }
 
 export function setSelectedSiteId(els, siteId) {
-  const resolvedSiteId = siteId || "—";
-  els.selectedSiteId.textContent = resolvedSiteId;
   enableGenerate(els, Boolean(siteId));
 }
 
-
 export function setCardPreview(els, cards, siteId = "") {
   const list = Array.isArray(cards) ? cards : [];
-  const resolvedSiteId = siteId || "—";
-
   if (!list.length || !siteId) {
     els.cardPreviewMeta.textContent = "Select a site to preview included IO cards.";
     els.cardPreview.textContent = "—";
     return;
   }
 
-  els.cardPreviewMeta.textContent = `${list.length} unique IO cards for Site_ID ${resolvedSiteId}.`;
+  els.cardPreviewMeta.textContent = `${list.length} unique IO cards for selected site.`;
   els.cardPreview.textContent = list.map((card, index) => `${index + 1}. ${card}`).join("\n");
 }
 
