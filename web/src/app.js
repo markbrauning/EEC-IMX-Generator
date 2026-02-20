@@ -114,10 +114,17 @@ function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
   return cards.sort((a, b) => a.rackSlot.localeCompare(b.rackSlot, undefined, { numeric: true, sensitivity: "base" }));
 }
 
-function refreshCardPreview() {
-  const siteId = resolveCurrentSiteId();
-  els.btnRefresh.disabled = !siteId;
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
+function setRefreshLoading(isLoading) {
+  els.btnRefresh.classList.toggle("is-loading", isLoading);
+  els.btnRefresh.setAttribute("aria-busy", isLoading ? "true" : "false");
+}
+
+function refreshCardPreviewNow() {
+  const siteId = resolveCurrentSiteId();
   if (!siteId) {
     setCardPreview(els, [], "");
     return;
@@ -126,6 +133,25 @@ function refreshCardPreview() {
   const generationResult = generateOutput({ silent: false });
   const warningsByRackSlot = mapWarningsByRackSlot(generationResult?.warnings || []);
   setCardPreview(els, getCardsForSite(siteId, warningsByRackSlot), siteId);
+}
+
+async function refreshCardPreview() {
+  const siteId = resolveCurrentSiteId();
+  els.btnRefresh.disabled = !siteId;
+
+  if (!siteId) {
+    refreshCardPreviewNow();
+    return;
+  }
+
+  setRefreshLoading(true);
+  els.btnRefresh.disabled = true;
+  try {
+    await Promise.all([sleep(100), Promise.resolve().then(() => refreshCardPreviewNow())]);
+  } finally {
+    setRefreshLoading(false);
+    els.btnRefresh.disabled = !resolveCurrentSiteId();
+  }
 }
 
 function onCustomerChanged() {
