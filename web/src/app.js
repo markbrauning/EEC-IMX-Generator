@@ -10,6 +10,7 @@ import {
   populateNames,
   resetSelectionUi,
   setProgress,
+  setCardPreview,
   setSelectedSiteId,
   setStatus,
   showWarnings,
@@ -49,22 +50,56 @@ function updateSiteIndexes(sites) {
   state.siteIdByCustomerName = indexes.siteIdByCustomerName;
 }
 
+
+function getCardsForSite(siteId) {
+  const sid = String(siteId || "").trim();
+  if (!sid) return [];
+
+  const rackRows = state.tables?.ITKRackLayout?.records || [];
+  const seenSlots = new Set();
+  const cards = [];
+
+  for (const row of rackRows) {
+    if (String(row[CONFIG.SITE_ID_COLUMN] ?? "").trim() !== sid) continue;
+    if (String(row.Rack_Status || "").toUpperCase() !== "READY") continue;
+
+    const slotId = String(row.IO_Slot_ID || "").trim();
+    if (!slotId || seenSlots.has(slotId)) continue;
+    seenSlots.add(slotId);
+
+    const rackSlot = String(row.Rack_And_Slot || "").trim() || "Unknown Rack/Slot";
+    const model = String(row.IO_Card_Type_Cd || "").trim() || "Unknown Model";
+    const drawing = String(row.Card_Drawing_Number || "").trim();
+    const drawingSuffix = drawing ? ` • Drawing ${drawing}` : "";
+    cards.push(`${rackSlot} • ${model}${drawingSuffix}`);
+  }
+
+  return cards.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+}
+
+function refreshCardPreview() {
+  const siteId = resolveCurrentSiteId();
+  setSelectedSiteId(els, siteId);
+  setCardPreview(els, getCardsForSite(siteId), siteId);
+  els.btnRefreshCards.disabled = !siteId;
+}
+
 function onCustomerChanged() {
   const customer = getSelectedCustomer();
   const names = state.namesByCustomer.get(customer) || [];
 
   els.nameSelect.value = "";
-  setSelectedSiteId(els, "");
   populateNames(els, names);
+  refreshCardPreview();
 
   if (names.length === 1) {
     els.nameSelect.value = names[0];
-    setSelectedSiteId(els, resolveCurrentSiteId());
+    refreshCardPreview();
   }
 }
 
 function onNameChanged() {
-  setSelectedSiteId(els, resolveCurrentSiteId());
+  refreshCardPreview();
 }
 
 function reportLoadError(error) {
@@ -119,6 +154,7 @@ async function load() {
     els.siteListMeta.textContent =
       `Loaded ${state.sites.length} site rows. Select Customer_Name, then Name.`;
     setStatus(els, "Loaded");
+    refreshCardPreview();
   } catch (error) {
     reportLoadError(error);
   }
@@ -162,5 +198,6 @@ els.btnReload.addEventListener("click", load);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
 els.btnGenerate.addEventListener("click", generateOutput);
+els.btnRefreshCards.addEventListener("click", refreshCardPreview);
 
 load();
