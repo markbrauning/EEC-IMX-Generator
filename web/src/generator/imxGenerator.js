@@ -288,3 +288,5 @@ export function generateIMX({ tables, siteId, options = {} }) {
       cardsGenerated
     }
   };
+
+}
