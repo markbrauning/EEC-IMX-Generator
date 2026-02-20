@@ -65,6 +65,15 @@ function resolveCurrentSiteId() {
   return deriveSiteId(state.siteIdByCustomerName, getSelectedCustomer(), getSelectedName());
 }
 
+function cleanAlphaNum(text) {
+  return String(text || "").replace(/[^A-Za-z0-9]/g, "");
+}
+
+function buildImxFilename(selectedSiteName) {
+  const siteNameToken = cleanAlphaNum(String(selectedSiteName || "").trim()).slice(0, 20);
+  return `E104_${siteNameToken}.imx`;
+}
+
 function updateSiteIndexes(sites) {
   const indexes = createSiteIndexes(sites, CONFIG.SITE_LIST_COLUMNS);
   state.customers = indexes.customers;
@@ -217,8 +226,7 @@ function generateOutput({ silent = false } = {}) {
         result.imxText;
     }
 
-    const safeSiteId = siteId.replace(/[^a-zA-Z0-9\-_.]/g, "_");
-    downloadTextFile(els, `E104_${safeSiteId}.imx`, result.imxText);
+    downloadTextFile(els, buildImxFilename(getSelectedName()), result.imxText);
     return result;
   } catch (error) {
     if (!silent) {
