@@ -176,8 +176,7 @@ async function load() {
 
     els.tablesSummary.textContent = summarizeTables(tables);
     populateCustomers(els, state.customers);
-    els.siteListMeta.textContent =
-      `Loaded ${state.sites.length} site rows. Select Customer_Name, then Name.`;
+    els.siteListMeta.textContent = "";
     setStatus(els, "Loaded");
     refreshCardPreview();
   } catch (error) {
