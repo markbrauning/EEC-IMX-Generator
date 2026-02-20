@@ -75,7 +75,7 @@ export function setCardPreview(els, cards, siteId = "") {
   const list = Array.isArray(cards) ? cards : [];
   if (!list.length || !siteId) {
     els.cardPreviewMeta.textContent = "Select a site to preview included IO cards.";
-    els.cardPreview.innerHTML = "<tr><td colspan=\"5\">—</td></tr>";
+    els.cardPreview.innerHTML = "<tr><td colspan=\"6\">—</td></tr>";
     return;
   }
 
@@ -88,6 +88,7 @@ export function setCardPreview(els, cards, siteId = "") {
         <td>${escapeHtml(card.rackSlot || "Unknown Rack/Slot")}</td>
         <td>${escapeHtml(card.model || "Unknown Model")}</td>
         <td>${escapeHtml(card.drawing || "")}</td>
+        <td>${escapeHtml(card.eplanCardTypical || "")}</td>
         <td>${warnings || ""}</td>
       </tr>`;
     })

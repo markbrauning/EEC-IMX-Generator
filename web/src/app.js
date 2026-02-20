@@ -92,10 +92,12 @@ function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
     const rackSlot = String(row.Rack_And_Slot || "").trim() || "Unknown Rack/Slot";
     const model = String(row.IO_Card_Type_Cd || "").trim() || "Unknown Model";
     const drawing = String(row.Card_Drawing_Number || "").trim();
+    const eplanCardTypical = String(row.EPlan_Card_Typical || "").trim();
     cards.push({
       rackSlot,
       model,
       drawing,
+      eplanCardTypical,
       warnings: warningsByRackSlot.get(rackSlot) || []
     });
   }

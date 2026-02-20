@@ -45,9 +45,6 @@
 
     <section class="card">
       <h2>IMX generation</h2>
-      <p class="subtle">
-        Generator is kept in <code>src/generator/</code> and does not depend on the UI. Later you can move it to a backend service.
-      </p>
 
       <div class="row preview-header">
         <h3 class="preview-title">IO Card preview</h3>
@@ -62,11 +59,12 @@
               <th>Rack / Slot</th>
               <th>Card Model</th>
               <th>Drawing</th>
+              <th>EPlan Card Typical</th>
               <th>Warnings</th>
             </tr>
           </thead>
           <tbody id="cardPreview">
-            <tr><td colspan="5">—</td></tr>
+            <tr><td colspan="6">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -84,10 +82,6 @@
 
     <section class="card">
       <h2>Load data</h2>
-      <p class="subtle">
-        This app loads all CSV tables at startup (Option A). Place the exported CSVs and <code>_manifest.csv</code> in
-        <code>web/srcdata/</code>.
-      </p>
 
       <div class="row">
         <button id="btnReload" class="btn">Reload tables</button>
@@ -106,9 +100,7 @@
     </section>
   </main>
 
-  <footer class="footer subtle">
-    Tip: open this folder with a local server (e.g. <code>python -m http.server</code>) — browsers block <code>file://</code> fetches.
-  </footer>
+  <footer class="footer subtle"></footer>
 
   <script type="module" src="./src/app.js"></script>
 </body>
