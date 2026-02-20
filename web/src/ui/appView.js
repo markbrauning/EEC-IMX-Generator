@@ -12,10 +12,8 @@ export function getAppElements() {
     btnRefreshCards: document.getElementById("btnRefreshCards"),
     cardPreviewMeta: document.getElementById("cardPreviewMeta"),
     cardPreview: document.getElementById("cardPreview"),
-    btnGenerate: document.getElementById("btnGenerate"),
     downloadLink: document.getElementById("downloadLink"),
     genOutput: document.getElementById("genOutput"),
-    warnings: document.getElementById("warnings")
   };
 }
 
@@ -40,22 +38,6 @@ export function summarizeTables(tables) {
     .join("\n");
 }
 
-export function clearWarnings(els) {
-  els.warnings.innerHTML = "";
-}
-
-export function showWarnings(els, warningList) {
-  clearWarnings(els);
-  (warningList || []).forEach((warning) => {
-    const item = document.createElement("li");
-    item.textContent = warning;
-    els.warnings.appendChild(item);
-  });
-}
-
-export function enableGenerate(els, enabled) {
-  els.btnGenerate.disabled = !enabled;
-}
 
 export function resetSelectionUi(els) {
   els.customerSelect.innerHTML = `<option value="">—</option>`;
@@ -63,7 +45,6 @@ export function resetSelectionUi(els) {
   els.customerSelect.disabled = true;
   els.nameSelect.disabled = true;
   els.siteListMeta.textContent = "";
-  enableGenerate(els, false);
   els.btnRefreshCards.disabled = true;
   setCardPreview(els, [], "");
 }
@@ -88,10 +69,6 @@ export function populateNames(els, names) {
     els.nameSelect.appendChild(option);
   }
   els.nameSelect.disabled = names.length === 0;
-}
-
-export function setSelectedSiteId(els, siteId) {
-  enableGenerate(els, Boolean(siteId));
 }
 
 export function setCardPreview(els, cards, siteId = "") {

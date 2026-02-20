@@ -3,7 +3,6 @@ import { loadAllTables } from "./data/loadTables.js";
 import { generateIMX } from "./generator/imxGenerator.js";
 import { createSiteIndexes, deriveSiteId } from "./site/siteIndex.js";
 import {
-  clearWarnings,
   downloadTextFile,
   getAppElements,
   populateCustomers,
@@ -11,9 +10,7 @@ import {
   resetSelectionUi,
   setProgress,
   setCardPreview,
-  setSelectedSiteId,
   setStatus,
-  showWarnings,
   summarizeTables
 } from "./ui/appView.js";
 
@@ -108,7 +105,6 @@ function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
 
 function refreshCardPreview() {
   const siteId = resolveCurrentSiteId();
-  setSelectedSiteId(els, siteId);
   els.btnRefreshCards.disabled = !siteId;
 
   if (!siteId) {
@@ -143,7 +139,6 @@ function reportLoadError(error) {
   setStatus(els, "Error");
   setProgress(els, 0, "Failed");
   els.genOutput.textContent = String(error?.stack || error);
-  showWarnings(els, [String(error?.message || error)]);
 }
 
 function validateSiteListColumns(tables) {
@@ -162,7 +157,6 @@ async function load() {
   resetSelectionUi(els);
   els.downloadLink.style.display = "none";
   els.genOutput.textContent = "";
-  clearWarnings(els);
 
   try {
     const tables = await loadAllTables({
@@ -193,12 +187,12 @@ async function load() {
     refreshCardPreview();
   } catch (error) {
     reportLoadError(error);
+    els.downloadLink.style.display = "none";
   }
 }
 
 function generateOutput({ silent = false } = {}) {
   try {
-    clearWarnings(els);
     els.genOutput.textContent = "";
 
     const siteId = resolveCurrentSiteId();
@@ -221,13 +215,11 @@ function generateOutput({ silent = false } = {}) {
         result.imxText;
     }
 
-    if (result.warnings?.length) showWarnings(els, result.warnings);
 
     const safeSiteId = siteId.replace(/[^a-zA-Z0-9\-_.]/g, "_");
     downloadTextFile(els, `E104_${safeSiteId}.imx`, result.imxText);
     return result;
   } catch (error) {
-    showWarnings(els, [String(error?.message || error)]);
     if (!silent) {
       els.genOutput.textContent = String(error?.stack || error);
     }
@@ -255,7 +247,6 @@ els.btnReload.addEventListener("click", load);
 els.themeSelect?.addEventListener("change", onThemeChanged);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
-els.btnGenerate.addEventListener("click", generateOutput);
 els.btnRefreshCards.addEventListener("click", refreshCardPreview);
 
 initializeTheme();
