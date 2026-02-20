@@ -163,3 +163,6 @@ select.select{
   gap:6px;
   min-width:260px;
 }
+
+.preview-header{margin-top:10px}
+.preview-title{margin:0;font-size:14px;color:var(--muted);font-weight:600}
