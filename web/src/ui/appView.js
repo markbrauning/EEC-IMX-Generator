@@ -9,7 +9,7 @@ export function getAppElements() {
     nameSelect: document.getElementById("nameSelect"),
     siteListMeta: document.getElementById("siteListMeta"),
     themeSelect: document.getElementById("themeSelect"),
-    btnRefreshCards: document.getElementById("btnRefreshCards"),
+    btnRefresh: document.getElementById("btnRefresh"),
     cardPreviewMeta: document.getElementById("cardPreviewMeta"),
     cardPreview: document.getElementById("cardPreview"),
     downloadLink: document.getElementById("downloadLink"),
@@ -45,7 +45,7 @@ export function resetSelectionUi(els) {
   els.customerSelect.disabled = true;
   els.nameSelect.disabled = true;
   els.siteListMeta.textContent = "";
-  els.btnRefreshCards.disabled = true;
+  els.btnRefresh.disabled = true;
   setCardPreview(els, [], "");
 }
 
