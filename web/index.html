@@ -54,7 +54,22 @@
         <button id="btnRefreshCards" class="btn" disabled title="Reload ITKRackLayout.csv">↻ Refresh Cards</button>
       </div>
       <div id="cardPreviewMeta" class="subtle">Select a site to preview included IO cards.</div>
-      <pre id="cardPreview" class="pre">—</pre>
+      <div class="table-host">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Rack / Slot</th>
+              <th>Card Model</th>
+              <th>Drawing</th>
+              <th>Warnings</th>
+            </tr>
+          </thead>
+          <tbody id="cardPreview">
+            <tr><td colspan="5">—</td></tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="row">
         <button id="btnGenerate" class="btn btn-primary" disabled>Generate IMX</button>

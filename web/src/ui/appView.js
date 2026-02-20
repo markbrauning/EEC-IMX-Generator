@@ -98,12 +98,32 @@ export function setCardPreview(els, cards, siteId = "") {
   const list = Array.isArray(cards) ? cards : [];
   if (!list.length || !siteId) {
     els.cardPreviewMeta.textContent = "Select a site to preview included IO cards.";
-    els.cardPreview.textContent = "—";
+    els.cardPreview.innerHTML = "<tr><td colspan=\"5\">—</td></tr>";
     return;
   }
 
   els.cardPreviewMeta.textContent = `${list.length} unique IO cards for selected site.`;
-  els.cardPreview.textContent = list.map((card, index) => `${index + 1}. ${card}`).join("\n");
+  els.cardPreview.innerHTML = list
+    .map((card, index) => {
+      const warnings = (card.warnings || []).map((warning) => `<div>${escapeHtml(warning)}</div>`).join("");
+      return `<tr>
+        <td>${index + 1}</td>
+        <td>${escapeHtml(card.rackSlot || "Unknown Rack/Slot")}</td>
+        <td>${escapeHtml(card.model || "Unknown Model")}</td>
+        <td>${escapeHtml(card.drawing || "")}</td>
+        <td>${warnings || ""}</td>
+      </tr>`;
+    })
+    .join("");
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 export function downloadTextFile(els, filename, text) {

@@ -76,7 +76,7 @@ function updateSiteIndexes(sites) {
 }
 
 
-function getCardsForSite(siteId) {
+function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
   const sid = String(siteId || "").trim();
   if (!sid) return [];
 
@@ -95,18 +95,30 @@ function getCardsForSite(siteId) {
     const rackSlot = String(row.Rack_And_Slot || "").trim() || "Unknown Rack/Slot";
     const model = String(row.IO_Card_Type_Cd || "").trim() || "Unknown Model";
     const drawing = String(row.Card_Drawing_Number || "").trim();
-    const drawingSuffix = drawing ? ` • Drawing ${drawing}` : "";
-    cards.push(`${rackSlot} • ${model}${drawingSuffix}`);
+    cards.push({
+      rackSlot,
+      model,
+      drawing,
+      warnings: warningsByRackSlot.get(rackSlot) || []
+    });
   }
 
-  return cards.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+  return cards.sort((a, b) => a.rackSlot.localeCompare(b.rackSlot, undefined, { numeric: true, sensitivity: "base" }));
 }
 
 function refreshCardPreview() {
   const siteId = resolveCurrentSiteId();
   setSelectedSiteId(els, siteId);
-  setCardPreview(els, getCardsForSite(siteId), siteId);
   els.btnRefreshCards.disabled = !siteId;
+
+  if (!siteId) {
+    setCardPreview(els, [], "");
+    return;
+  }
+
+  const generationResult = generateOutput({ silent: true });
+  const warningsByRackSlot = mapWarningsByRackSlot(generationResult?.warnings || []);
+  setCardPreview(els, getCardsForSite(siteId, warningsByRackSlot), siteId);
 }
 
 function onCustomerChanged() {
@@ -184,7 +196,7 @@ async function load() {
   }
 }
 
-function generateOutput() {
+function generateOutput({ silent = false } = {}) {
   try {
     clearWarnings(els);
     els.genOutput.textContent = "";
@@ -200,21 +212,43 @@ function generateOutput() {
       options: { siteIdColumn: CONFIG.SITE_ID_COLUMN }
     });
 
-    els.genOutput.textContent =
-      `Generated IMX\n\n` +
-      `Rack rows for site: ${result.stats.rackForSite}\n` +
-      `IO rows for site: ${result.stats.ioForSite}\n\n` +
-      `IMX Preview:\n----------------\n` +
-      result.imxText;
+    if (!silent) {
+      els.genOutput.textContent =
+        `Generated IMX\n\n` +
+        `Rack rows for site: ${result.stats.rackForSite}\n` +
+        `IO rows for site: ${result.stats.ioForSite}\n\n` +
+        `IMX Preview:\n----------------\n` +
+        result.imxText;
+    }
 
     if (result.warnings?.length) showWarnings(els, result.warnings);
 
     const safeSiteId = siteId.replace(/[^a-zA-Z0-9\-_.]/g, "_");
     downloadTextFile(els, `E104_${safeSiteId}.imx`, result.imxText);
+    return result;
   } catch (error) {
     showWarnings(els, [String(error?.message || error)]);
-    els.genOutput.textContent = String(error?.stack || error);
+    if (!silent) {
+      els.genOutput.textContent = String(error?.stack || error);
+    }
+    return null;
   }
+}
+
+function mapWarningsByRackSlot(warnings) {
+  const byRackSlot = new Map();
+  for (const warning of warnings || []) {
+    const text = String(warning || "");
+    const delim = text.indexOf(":");
+    if (delim <= 0) continue;
+    const rackSlot = text.slice(0, delim).trim();
+    const message = text.slice(delim + 1).trim();
+    if (!rackSlot || !message) continue;
+    const current = byRackSlot.get(rackSlot) || [];
+    current.push(message);
+    byRackSlot.set(rackSlot, current);
+  }
+  return byRackSlot;
 }
 
 els.btnReload.addEventListener("click", load);
