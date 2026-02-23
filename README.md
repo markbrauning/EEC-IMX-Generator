@@ -1,59 +1,74 @@
-# EEC IMX Generator (Web UI) — Phase 0 (in-browser generator)
+# EEC IMX Generator
 
-This repository folder contains a **static web UI** that:
+This repository contains both:
 
-1) Loads CSV tables from `web/srcdata/` at startup (Option A)
-2) Presents **two dropdowns** from `ITKSiteList.csv`:
-   - `Customer_Name` → filters → `Name`
-3) Resolves that selection to a single `Site_ID`
-4) Runs the IMX generator **in the browser** and downloads an `.imx` file
+- the original Excel/VBA implementation (`EPlan E104 Generator.xlsm`, `ExcelVBA/`), and
+- a static web application in `web/` that generates E104 `.imx` output directly in the browser.
 
-> The IMX generator logic is isolated in `web/src/generator/` so you can later migrate it to a backend service.
+The current active app is the web version.
 
----
+## What the web app does
 
-## Required `ITKSiteList.csv`
+The browser app loads CSV tables from `web/srcdata/`, lets you select a site from `ITKSiteList.csv`, runs the IMX generator, and provides a downloadable `.imx` file.
 
-Place `ITKSiteList.csv` in `web/srcdata/` with headers:
+Current UI behavior includes:
+
+- Customer/Site dropdowns backed by `ITKSiteList.csv` (`Customer_Name` + `Name` -> `Site_ID`)
+- IO card preview table based on rack layout data
+- warning display per rack/slot (when generation emits warnings)
+- generation output preview + download link
+- reload controls for data tables
+- dark/gray/light theme selector persisted in local storage
+
+## Repository layout
+
+- `web/` — static app (`index.html`, `styles.css`, JS modules under `web/src/`)
+- `web/src/generator/` — DOM-free generator logic (`generateIMX`) and helpers
+- `web/srcdata/` — CSV source tables and `_manifest.csv`
+- `tools/test_imx.js` — CLI script to generate and compare output to a golden `.imx` file if present
+- `docs/` — architecture, reverse-engineering notes, and development workflow
+- `ExcelVBA/` — extracted VBA modules from the workbook implementation
+
+## Required site list columns
+
+`web/srcdata/ITKSiteList.csv` must include:
 
 - `Customer_Name`
 - `Name`
 - `Site_ID`
 
-Example:
-
-```
-Customer_Name,Name,Site_ID
-SANDBOX,"SIOUX CENTER, IA",D0D42789-6062-4C76-B678-0159E1996DF4
-```
-
-The UI uses:
-- Dropdown 1: unique `Customer_Name`
-- Dropdown 2: unique `Name` values for the selected customer
-- Result: the **first** `Site_ID` found for that `(Customer_Name, Name)` pair (duplicates shouldn’t happen)
-
----
-
 ## Run locally
 
-From the `web/` folder:
+From `web/`:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open: http://localhost:8000
+Then open <http://localhost:8000>.
 
----
+## Validate generation from the command line
 
-## Implement real IMX generation
+From repository root:
 
-Edit:
+```bash
+node tools/test_imx.js
+```
 
-- `web/src/generator/imxGenerator.js`
+Optional explicit site ID:
 
-Interface:
+```bash
+node tools/test_imx.js <SITE_ID>
+```
+
+If a `.imx` file exists in the repo, the script compares generated output and fails on mismatch. If no golden file exists, it prints a warning and exits successfully.
+
+## Core generator interface
+
+`web/src/generator/imxGenerator.js` exports:
 
 ```js
 generateIMX({ tables, siteId, options }) -> { imxText, warnings, stats }
 ```
+
+This module is intentionally independent from the DOM so it can be reused in a future backend service.
