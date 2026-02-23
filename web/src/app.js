@@ -6,6 +6,7 @@ import {
   downloadTextFile,
   getAppElements,
   populateCustomers,
+  populateFavorites,
   populateNames,
   resetSelectionUi,
   setProgress,
@@ -21,11 +22,14 @@ let state = {
   sites: [],
   customers: [],
   namesByCustomer: new Map(),
-  siteIdByCustomerName: new Map()
+  siteIdByCustomerName: new Map(),
+  favorites: []
 };
 
-
 const THEME_KEY = "imx-ui-theme";
+const FAVORITES_KEY = "imx-favorite-sites";
+const LAST_SELECTION_KEY = "imx-last-selection";
+
 
 function applyTheme(theme) {
   const allowedThemes = new Set(["dark", "gray", "light"]);
@@ -51,6 +55,141 @@ function initializeTheme() {
 
 function onThemeChanged() {
   applyTheme(els.themeSelect?.value || "dark");
+}
+
+function buildFavoriteKey(customer, name) {
+  return `${customer}|||${name}`;
+}
+
+function readStorageJson(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return fallback;
+    return JSON.parse(raw);
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStorageJson(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Ignore storage errors (private mode, etc.)
+  }
+}
+
+function loadFavoritesFromStorage() {
+  const data = readStorageJson(FAVORITES_KEY, []);
+  if (!Array.isArray(data)) return [];
+
+  const seen = new Set();
+  const favorites = [];
+  for (const item of data) {
+    const customer = String(item?.customer || "").trim();
+    const name = String(item?.name || "").trim();
+    if (!customer || !name) continue;
+    const key = buildFavoriteKey(customer, name);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    favorites.push({ key, customer, name });
+  }
+  return favorites;
+}
+
+function persistFavorites() {
+  writeStorageJson(
+    FAVORITES_KEY,
+    state.favorites.map((favorite) => ({ customer: favorite.customer, name: favorite.name }))
+  );
+}
+
+function updateFavoritesUi() {
+  populateFavorites(els, state.favorites);
+
+  const currentKey = buildFavoriteKey(getSelectedCustomer(), getSelectedName());
+  const selectedFavorite = state.favorites.find((favorite) => favorite.key === currentKey);
+  els.favoritesSelect.value = selectedFavorite ? selectedFavorite.key : "";
+
+  const hasSelection = Boolean(getSelectedCustomer() && getSelectedName());
+  const selectionExists = hasSelection && Boolean(resolveCurrentSiteId());
+  const alreadyFavorite = Boolean(selectedFavorite);
+
+  els.btnAddFavorite.disabled = !selectionExists || alreadyFavorite;
+  els.btnRemoveFavorite.disabled = !alreadyFavorite;
+}
+
+function saveLastSelection() {
+  const customer = getSelectedCustomer();
+  const name = getSelectedName();
+  if (!customer || !name) return;
+  writeStorageJson(LAST_SELECTION_KEY, { customer, name });
+}
+
+function tryRestoreLastSelection() {
+  const saved = readStorageJson(LAST_SELECTION_KEY, null);
+  const customer = String(saved?.customer || "").trim();
+  const name = String(saved?.name || "").trim();
+  if (!customer || !name) return false;
+
+  const names = state.namesByCustomer.get(customer) || [];
+  if (!names.includes(name)) return false;
+
+  els.customerSelect.value = customer;
+  populateNames(els, names);
+  els.nameSelect.value = name;
+  return true;
+}
+
+function onAddFavorite() {
+  const customer = getSelectedCustomer();
+  const name = getSelectedName();
+  const siteId = resolveCurrentSiteId();
+  if (!customer || !name || !siteId) return;
+
+  const key = buildFavoriteKey(customer, name);
+  if (state.favorites.some((favorite) => favorite.key === key)) {
+    updateFavoritesUi();
+    return;
+  }
+
+  state.favorites.push({ key, customer, name });
+  state.favorites.sort((a, b) => a.customer.localeCompare(b.customer) || a.name.localeCompare(b.name));
+  persistFavorites();
+  updateFavoritesUi();
+}
+
+function onRemoveFavorite() {
+  const customer = getSelectedCustomer();
+  const name = getSelectedName();
+  const key = buildFavoriteKey(customer, name);
+  const favorite = state.favorites.find((item) => item.key === key);
+  if (!favorite) {
+    updateFavoritesUi();
+    return;
+  }
+
+  const confirmed = window.confirm(`Remove favorite for ${favorite.customer} — ${favorite.name}?`);
+  if (!confirmed) return;
+
+  state.favorites = state.favorites.filter((item) => item.key !== key);
+  persistFavorites();
+  updateFavoritesUi();
+}
+
+function onFavoriteChanged() {
+  const selectedKey = String(els.favoritesSelect.value || "");
+  if (!selectedKey) return;
+  const favorite = state.favorites.find((item) => item.key === selectedKey);
+  if (!favorite) return;
+
+  const names = state.namesByCustomer.get(favorite.customer) || [];
+  if (!names.includes(favorite.name)) return;
+
+  els.customerSelect.value = favorite.customer;
+  populateNames(els, names);
+  els.nameSelect.value = favorite.name;
+  refreshCardPreview();
 }
 
 function getSelectedCustomer() {
@@ -138,6 +277,7 @@ function refreshCardPreviewNow() {
 async function refreshCardPreview() {
   const siteId = resolveCurrentSiteId();
   els.btnRefresh.disabled = !siteId;
+  if (siteId) saveLastSelection();
 
   if (!siteId) {
     refreshCardPreviewNow();
@@ -166,10 +306,13 @@ function onCustomerChanged() {
     els.nameSelect.value = names[0];
     refreshCardPreview();
   }
+
+  updateFavoritesUi();
 }
 
 function onNameChanged() {
   refreshCardPreview();
+  updateFavoritesUi();
 }
 
 function reportLoadError(error) {
@@ -219,9 +362,21 @@ async function load() {
 
     els.tablesSummary.textContent = summarizeTables(tables);
     populateCustomers(els, state.customers);
+    state.favorites = loadFavoritesFromStorage().filter((favorite) => {
+      const names = state.namesByCustomer.get(favorite.customer) || [];
+      return names.includes(favorite.name);
+    });
+    persistFavorites();
+
+    const restoredSelection = tryRestoreLastSelection();
+    if (!restoredSelection) {
+      populateNames(els, []);
+    }
+
     els.siteListMeta.textContent = "";
     setStatus(els, "Loaded");
     refreshCardPreview();
+    updateFavoritesUi();
   } catch (error) {
     reportLoadError(error);
     els.downloadLink.style.display = "none";
@@ -284,6 +439,9 @@ els.btnReload.addEventListener("click", load);
 els.themeSelect?.addEventListener("change", onThemeChanged);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
+els.favoritesSelect.addEventListener("change", onFavoriteChanged);
+els.btnAddFavorite.addEventListener("click", onAddFavorite);
+els.btnRemoveFavorite.addEventListener("click", onRemoveFavorite);
 els.btnRefresh.addEventListener("click", refreshCardPreview);
 
 initializeTheme();

@@ -246,3 +246,13 @@ select.select{
 .theme-field .select{width:min(220px, 100%)}
 
 .thin-field{min-width:200px}
+
+.favorites-row{
+  margin-top:4px;
+  align-items:flex-end;
+}
+
+.favorites-row .field{
+  flex:1;
+  min-width:240px;
+}

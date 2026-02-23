@@ -8,6 +8,9 @@ export function getAppElements() {
     customerSelect: document.getElementById("customerSelect"),
     nameSelect: document.getElementById("nameSelect"),
     siteListMeta: document.getElementById("siteListMeta"),
+    favoritesSelect: document.getElementById("favoritesSelect"),
+    btnAddFavorite: document.getElementById("btnAddFavorite"),
+    btnRemoveFavorite: document.getElementById("btnRemoveFavorite"),
     themeSelect: document.getElementById("themeSelect"),
     btnRefresh: document.getElementById("btnRefresh"),
     cardPreviewMeta: document.getElementById("cardPreviewMeta"),
@@ -45,6 +48,10 @@ export function resetSelectionUi(els) {
   els.customerSelect.disabled = true;
   els.nameSelect.disabled = true;
   els.siteListMeta.textContent = "";
+  els.favoritesSelect.innerHTML = `<option value="">—</option>`;
+  els.favoritesSelect.disabled = true;
+  els.btnAddFavorite.disabled = true;
+  els.btnRemoveFavorite.disabled = true;
   els.btnRefresh.disabled = true;
   setCardPreview(els, [], "");
 }
@@ -69,6 +76,18 @@ export function populateNames(els, names) {
     els.nameSelect.appendChild(option);
   }
   els.nameSelect.disabled = names.length === 0;
+}
+
+
+export function populateFavorites(els, favorites) {
+  els.favoritesSelect.innerHTML = `<option value="">—</option>`;
+  for (const favorite of favorites || []) {
+    const option = document.createElement("option");
+    option.value = favorite.key;
+    option.textContent = `${favorite.customer} — ${favorite.name}`;
+    els.favoritesSelect.appendChild(option);
+  }
+  els.favoritesSelect.disabled = (favorites || []).length === 0;
 }
 
 export function setCardPreview(els, cards, siteId = "") {
