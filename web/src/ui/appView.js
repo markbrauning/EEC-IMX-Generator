@@ -17,6 +17,10 @@ export function getAppElements() {
     cardPreview: document.getElementById("cardPreview"),
     downloadLink: document.getElementById("downloadLink"),
     genOutput: document.getElementById("genOutput"),
+    slotImxModal: document.getElementById("slotImxModal"),
+    slotImxTitle: document.getElementById("slotImxTitle"),
+    slotImxContent: document.getElementById("slotImxContent"),
+    slotImxClose: document.getElementById("slotImxClose")
   };
 }
 
@@ -94,7 +98,7 @@ export function setCardPreview(els, cards, siteId = "") {
   const list = Array.isArray(cards) ? cards : [];
   if (!list.length || !siteId) {
     els.cardPreviewMeta.textContent = "Select a site to preview included IO cards.";
-    els.cardPreview.innerHTML = "<tr><td colspan=\"6\">—</td></tr>";
+    els.cardPreview.innerHTML = "<tr><td colspan=\"9\">—</td></tr>";
     return;
   }
 
@@ -109,6 +113,9 @@ export function setCardPreview(els, cards, siteId = "") {
         <td>${escapeHtml(card.drawing || "")}</td>
         <td>${escapeHtml(card.eplanCardTypical || "")}</td>
         <td>${warnings || ""}</td>
+        <td></td>
+        <td>${escapeHtml(card.lastGeneratedAt || "")}</td>
+        <td><button class="btn" data-action="view-slot-imx" data-slot-key="${escapeHtml(card.slotKey || "")}" data-rack-slot="${escapeHtml(card.rackSlot || "")}" type="button">View IMX String</button></td>
       </tr>`;
     })
     .join("");
@@ -133,4 +140,16 @@ export function downloadTextFile(els, filename, text) {
   els.downloadLink.textContent = `Download ${filename}`;
 
   setTimeout(() => URL.revokeObjectURL(url), 60_000);
+}
+
+export function showSlotImxModal(els, title, content) {
+  if (!els.slotImxModal) return;
+  els.slotImxTitle.textContent = title;
+  els.slotImxContent.textContent = content;
+  els.slotImxModal.showModal();
+}
+
+export function closeSlotImxModal(els) {
+  if (!els.slotImxModal?.open) return;
+  els.slotImxModal.close();
 }
