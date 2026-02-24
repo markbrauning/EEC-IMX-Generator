@@ -1,6 +1,6 @@
 import { CONFIG } from "./config.js";
 import { loadAllTables } from "./data/loadTables.js";
-import { generateIMX } from "./generator/imxGenerator.js";
+import { generateIMX, generateSlotIMXData } from "./generator/imxGenerator.js";
 import { createSiteIndexes, deriveSiteId } from "./site/siteIndex.js";
 import {
   downloadTextFile,
@@ -12,6 +12,8 @@ import {
   setProgress,
   setCardPreview,
   setStatus,
+  showSlotImxModal,
+  closeSlotImxModal,
   summarizeTables
 } from "./ui/appView.js";
 
@@ -23,7 +25,9 @@ let state = {
   customers: [],
   namesByCustomer: new Map(),
   siteIdByCustomerName: new Map(),
-  favorites: []
+  favorites: [],
+  slotImxByKey: new Map(),
+  slotGeneratedAtByKey: new Map()
 };
 
 const THEME_KEY = "imx-ui-theme";
@@ -241,12 +245,15 @@ function getCardsForSite(siteId, warningsByRackSlot = new Map()) {
     const model = String(row.IO_Card_Type_Cd || "").trim() || "Unknown Model";
     const drawing = String(row.Card_Drawing_Number || "").trim();
     const eplanCardTypical = String(row.EPlan_Card_Typical || "").trim();
+    const slotKey = `${rackSlot}|||${slotId}`;
     cards.push({
+      slotKey,
       rackSlot,
       model,
       drawing,
       eplanCardTypical,
-      warnings: warningsByRackSlot.get(rackSlot) || []
+      warnings: warningsByRackSlot.get(rackSlot) || [],
+      lastGeneratedAt: state.slotGeneratedAtByKey.get(slotKey) || ""
     });
   }
 
@@ -265,12 +272,27 @@ function setRefreshLoading(isLoading) {
 function refreshCardPreviewNow() {
   const siteId = resolveCurrentSiteId();
   if (!siteId) {
+    state.slotImxByKey = new Map();
+    state.slotGeneratedAtByKey = new Map();
     setCardPreview(els, [], "");
     return;
   }
 
-  const generationResult = generateOutput({ silent: false });
-  const warningsByRackSlot = mapWarningsByRackSlot(generationResult?.warnings || []);
+  const slotData = generateSlotIMXData({
+    tables: state.tables,
+    siteId,
+    options: { siteIdColumn: CONFIG.SITE_ID_COLUMN }
+  });
+
+  state.slotImxByKey = new Map();
+  state.slotGeneratedAtByKey = new Map();
+  for (const slotResult of slotData.slotResults || []) {
+    if (!slotResult.cardNode) continue;
+    state.slotImxByKey.set(slotResult.slotKey, slotResult.slotImxText || "");
+    state.slotGeneratedAtByKey.set(slotResult.slotKey, new Date(slotResult.generatedAt).toLocaleString());
+  }
+
+  const warningsByRackSlot = mapWarningsByRackSlot(slotData?.warnings || []);
   setCardPreview(els, getCardsForSite(siteId, warningsByRackSlot), siteId);
 }
 
@@ -435,7 +457,27 @@ function mapWarningsByRackSlot(warnings) {
   return byRackSlot;
 }
 
+
+function onCardPreviewClicked(event) {
+  const button = event.target.closest('[data-action="view-slot-imx"]');
+  if (!button) return;
+  const slotKey = String(button.getAttribute("data-slot-key") || "");
+  const rackSlot = String(button.getAttribute("data-rack-slot") || "IO Slot");
+  const imxText = state.slotImxByKey.get(slotKey) || "No IMX available for this slot.";
+  showSlotImxModal(els, `IMX String — ${rackSlot}`, imxText);
+}
+
+function bindModalEvents() {
+  els.slotImxClose?.addEventListener("click", () => closeSlotImxModal(els));
+  els.slotImxModal?.addEventListener("click", (event) => {
+    const rect = els.slotImxModal.getBoundingClientRect();
+    const inDialog = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;
+    if (!inDialog) closeSlotImxModal(els);
+  });
+}
+
 els.btnReload.addEventListener("click", load);
+els.cardPreview?.addEventListener("click", onCardPreviewClicked);
 els.themeSelect?.addEventListener("change", onThemeChanged);
 els.customerSelect.addEventListener("change", onCustomerChanged);
 els.nameSelect.addEventListener("change", onNameChanged);
@@ -444,5 +486,6 @@ els.btnAddFavorite.addEventListener("click", onAddFavorite);
 els.btnRemoveFavorite.addEventListener("click", onRemoveFavorite);
 els.btnRefresh.addEventListener("click", refreshCardPreview);
 
+bindModalEvents();
 initializeTheme();
 load();

@@ -74,11 +74,14 @@
               <th>Card Model</th>
               <th>Drawing</th>
               <th>EPlan Card Typical</th>
-              <th>Warnings</th>
+              <th>EPlan Generator Errors/Warnings</th>
+              <th>EPlan Sheets out of date?</th>
+              <th>Last Generation Date/Time</th>
+              <th>IMX</th>
             </tr>
           </thead>
           <tbody id="cardPreview">
-            <tr><td colspan="6">—</td></tr>
+            <tr><td colspan="9">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -91,6 +94,16 @@
         <summary>Generation output</summary>
         <pre id="genOutput" class="pre"></pre>
       </details>
+
+      <dialog id="slotImxModal" class="slot-imx-modal">
+        <div class="slot-imx-modal-content">
+          <div class="slot-imx-modal-header">
+            <h3 id="slotImxTitle">Slot IMX</h3>
+            <button id="slotImxClose" class="btn" type="button">Close</button>
+          </div>
+          <pre id="slotImxContent" class="pre slot-imx-content"></pre>
+        </div>
+      </dialog>
 
     </section>
 

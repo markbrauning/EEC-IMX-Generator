@@ -65,7 +65,18 @@ function firstDiff(a, b) {
   const siteId = process.argv[2] || 'EPLANTRAINING';
   const tables = loadTables(path.join(repo, 'web', 'srcdata'));
   const mod = await import(pathToFileURL(path.join(repo, 'web', 'src', 'generator', 'imxGenerator.js')).href);
+  const slotData = mod.generateSlotIMXData({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
   const result = mod.generateIMX({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
+
+  if (!Array.isArray(slotData.slotResults) || !slotData.slotResults.length) {
+    console.log('WARNING: No slot-level rows for selected site; skipping slot IMX assertions.');
+  } else {
+    const firstSlot = slotData.slotResults.find((r) => r.cardNode && r.slotImxText);
+    if (!firstSlot) {
+      console.log('MISMATCH: Slot-level IMX text was not produced for any generated card.');
+      process.exit(1);
+    }
+  }
 
   const golden = findGolden(repo);
   if (!golden) {

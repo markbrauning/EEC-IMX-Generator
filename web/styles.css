@@ -256,3 +256,29 @@ select.select{
   flex:1;
   min-width:240px;
 }
+
+.slot-imx-modal{
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--card);
+  color:var(--text);
+  width:min(980px, 92vw);
+  max-height:86vh;
+  padding:0;
+}
+
+.slot-imx-modal::backdrop{background:rgba(0,0,0,.45)}
+
+.slot-imx-modal-content{padding:10px}
+
+.slot-imx-modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+.slot-imx-modal-header h3{margin:0;font-size:14px}
+
+.slot-imx-content{max-height:68vh;overflow:auto}
