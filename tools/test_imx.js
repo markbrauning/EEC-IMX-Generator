@@ -66,7 +66,8 @@ function firstDiff(a, b) {
   const tables = loadTables(path.join(repo, 'web', 'srcdata'));
   const mod = await import(pathToFileURL(path.join(repo, 'web', 'src', 'generator', 'imxGenerator.js')).href);
   const slotData = mod.generateSlotIMXData({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
-  const result = mod.generateIMX({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
+  const cardResult = mod.generateCardIMX({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
+  const siteResult = mod.generateSiteIMX({ tables, siteId, options: { siteIdColumn: 'Site_ID' } });
 
   if (!Array.isArray(slotData.slotResults) || !slotData.slotResults.length) {
     console.log('WARNING: No slot-level rows for selected site; skipping slot IMX assertions.');
@@ -81,13 +82,14 @@ function firstDiff(a, b) {
   const golden = findGolden(repo);
   if (!golden) {
     console.log('WARNING: No golden .imx file found.');
-    console.log(`Generated length: ${result.imxText.length} chars`);
-    console.log(`Warnings: ${result.warnings.length}`);
+    console.log(`Card IMX length: ${cardResult.imxText.length} chars`);
+    console.log(`Site IMX length: ${siteResult.imxText.length} chars`);
+    console.log(`Warnings: ${siteResult.warnings.length}`);
     process.exit(0);
   }
 
   const goldenText = fs.readFileSync(golden, 'utf8').replace(/^\uFEFF/, '');
-  const diff = firstDiff(result.imxText, goldenText);
+  const diff = firstDiff(siteResult.imxText, goldenText);
   if (!diff) {
     console.log(`MATCH: Generated output matches ${path.relative(repo, golden)}`);
     process.exit(0);

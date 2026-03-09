@@ -23,7 +23,7 @@ Current UI behavior includes:
 ## Repository layout
 
 - `web/` — static app (`index.html`, `styles.css`, JS modules under `web/src/`)
-- `web/src/generator/` — DOM-free generator logic (`generateIMX`) and helpers
+- `web/src/generator/` — DOM-free generator logic (`generateCardIMX` / `generateSiteIMX`) and helpers
 - `web/srcdata/` — CSV source tables and `_manifest.csv`
 - `tools/test_imx.js` — CLI script to generate and compare output to a golden `.imx` file if present
 - `docs/` — architecture, reverse-engineering notes, and development workflow
@@ -68,7 +68,8 @@ If a `.imx` file exists in the repo, the script compares generated output and fa
 `web/src/generator/imxGenerator.js` exports:
 
 ```js
-generateIMX({ tables, siteId, options }) -> { imxText, warnings, stats }
+generateCardIMX({ tables, siteId, options }) -> { imxText, warnings, stats }
+generateSiteIMX({ tables, siteId, options }) -> { imxText, warnings, stats }
 ```
 
 This module is intentionally independent from the DOM so it can be reused in a future backend service.

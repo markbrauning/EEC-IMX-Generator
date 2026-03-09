@@ -297,25 +297,22 @@ export function generateSlotIMXData({ tables, siteId, options = {} }) {
   };
 }
 
-export function generateIMX({ tables, siteId, options = {} }) {
+function cloneNode(node) {
+  return JSON.parse(JSON.stringify(node));
+}
+
+/**
+ * Generates XML containing only Card-level data (Card and all descendants).
+ *
+ * Note: this intentionally excludes Panel/Rack wrapper nodes so callers can
+ * compose card XML in different contexts.
+ */
+export function generateCardIMX({ tables, siteId, options = {} }) {
   const slotData = generateSlotIMXData({ tables, siteId, options });
   const root = makeMoNode("EECGeneratedE104s", "GeneratorProject", true, {});
-  const panelNodes = new Map();
   for (const slotResult of slotData.slotResults) {
     if (!slotResult.cardNode) continue;
-    const { panelClean, panelName, rackClean, cardNode } = slotResult;
-    if (!panelNodes.has(panelClean)) {
-      const panelNode = makeMoNode(`Panel_${panelClean}`, "Panel", false, { PanelName: panelName });
-      panelNodes.set(panelClean, panelNode);
-      append(root, panelNode);
-    }
-    const panelNode = panelNodes.get(panelClean);
-    let rackNode = panelNode.children.find(child => child.name === `Rack_${rackClean}`);
-    if (!rackNode) {
-      rackNode = makeMoNode(`Rack_${rackClean}`, "Rack", false, { RackName: rackClean });
-      append(panelNode, rackNode);
-    }
-    append(rackNode, cardNode);
+    append(root, cloneNode(slotResult.cardNode));
   }
 
   return {
@@ -324,5 +321,49 @@ export function generateIMX({ tables, siteId, options = {} }) {
     slotResults: slotData.slotResults,
     stats: slotData.stats
   };
+}
 
+/**
+ * Generates full site XML (Panel/Rack/Card) by composing Card-level generation.
+ */
+export function generateSiteIMX({ tables, siteId, options = {} }) {
+  const cardData = generateCardIMX({ tables, siteId, options });
+  const root = makeMoNode("EECGeneratedE104s", "GeneratorProject", true, {});
+  const panelNodes = new Map();
+
+  for (const slotResult of cardData.slotResults) {
+    if (!slotResult.cardNode) continue;
+    const { panelClean, panelName, rackClean, cardNode } = slotResult;
+    if (!panelNodes.has(panelClean)) {
+      const panelNode = makeMoNode(`Panel_${panelClean}`, "Panel", false, { PanelName: panelName });
+      panelNodes.set(panelClean, panelNode);
+      append(root, panelNode);
+    }
+
+    const panelNode = panelNodes.get(panelClean);
+    let rackNode = panelNode.children.find((child) => child.name === `Rack_${rackClean}`);
+    if (!rackNode) {
+      rackNode = makeMoNode(`Rack_${rackClean}`, "Rack", false, { RackName: rackClean });
+      append(panelNode, rackNode);
+    }
+
+    // Card body stays owned by generateCardIMX; site generation only wraps it.
+    append(rackNode, cloneNode(cardNode));
+  }
+
+  return {
+    imxText: serializeDocument(root),
+    warnings: cardData.warnings,
+    slotResults: cardData.slotResults,
+    stats: cardData.stats
+  };
+}
+
+/**
+ * Backwards-compatible alias kept for existing callers.
+ *
+ * generateIMX now emits only Card-level XML.
+ */
+export function generateIMX({ tables, siteId, options = {} }) {
+  return generateCardIMX({ tables, siteId, options });
 }

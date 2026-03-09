@@ -21,7 +21,7 @@ The core generator is intentionally DOM-free so it can be reused in a backend se
   - Site indexing and selected `Site_ID` derivation (`siteIndex.js`).
 - `web/src/generator/`
   - IMX generation and support functions:
-    - `imxGenerator.js` (main generation entry point)
+    - `imxGenerator.js` (card-level + site-level generation entry points)
     - `lookups.js` (lookup maps over reference tables)
     - `formatting.js` (string/date/utility helpers)
     - `imxSchema.js` (required-table definitions)
@@ -43,7 +43,8 @@ At startup:
 When generating output:
 
 - Selected site is resolved from the two dropdowns.
-- `generateIMX({ tables, siteId, options })` is called.
+- `generateSiteIMX({ tables, siteId, options })` is called for full-site output.
+- `generateCardIMX({ tables, siteId, options })` is available when only Card-and-below XML is needed.
 - Returned `imxText`, warnings, and stats are rendered in the UI.
 - A sanitized filename (`E104_<Site_ID>.imx`) is offered for download.
 
@@ -52,7 +53,13 @@ When generating output:
 Generator contract:
 
 ```js
-generateIMX({ tables, siteId, options }) -> {
+generateCardIMX({ tables, siteId, options }) -> {
+  imxText: string,
+  warnings: string[],
+  stats: Record<string, number>
+}
+
+generateSiteIMX({ tables, siteId, options }) -> {
   imxText: string,
   warnings: string[],
   stats: Record<string, number>
