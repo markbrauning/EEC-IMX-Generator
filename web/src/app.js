@@ -1,6 +1,6 @@
 import { CONFIG } from "./config.js";
 import { loadAllTables } from "./data/loadTables.js";
-import { generateIMX, generateSlotIMXData } from "./generator/imxGenerator.js";
+import { generateSiteIMX, generateSlotIMXData } from "./generator/imxGenerator.js";
 import { createSiteIndexes, deriveSiteId } from "./site/siteIndex.js";
 import {
   downloadTextFile,
@@ -416,7 +416,7 @@ function generateOutput({ silent = false } = {}) {
       throw new Error("Select Customer_Name and Name first.");
     }
 
-    const result = generateIMX({
+    const result = generateSiteIMX({
       tables: state.tables,
       siteId,
       options: { siteIdColumn: CONFIG.SITE_ID_COLUMN }
